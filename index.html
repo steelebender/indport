@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Layout</title>
+    <link
+      rel="stylesheet"
+      href="style.css" />
+
+    <script
+      src="functions.js"
+      defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="instance">
+        <div class="overlay">
+          <div class="menucontainer">
+            <div class="name">
+              <h2>Clement Asemani Arhin</h2>
+            </div>
+            <div class="ux">
+              <ul>
+                <li>UX / UI designer</li>
+                <li>AI programming</li>
+              </ul>
+            </div>
+            <div class="connections">
+              <div class="facebook">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/20/20837.png"
+                  alt="" />
+              </div>
+              <div class="linkedin">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/3128/3128219.png"
+                  alt="" />
+              </div>
+              <div class="ig">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/1384/1384031.png"
+                  alt="" />
+              </div>
+              <div class="git">
+                <img
+                  src="https://cdn-icons-png.flaticon.com/128/3291/3291695.png"
+                  alt="" />
+              </div>
+            </div>
+            <div class="user">
+              <div class="useracc">
+                <img
+                  width="70%"
+                  src="https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
+                  alt="" />
+              </div>
+            </div>
+            <div class="login">
+              @guest
+              <div class="signup">
+                <a href="signup">
+                  <h2>Signup</h2>
+                </a>
+              </div>
+              &nbsp;&nbsp;
+
+              <h2>/</h2>
+              &nbsp;&nbsp;
+
+              <div class="signin">
+                <a href="signin">
+                  <h2>Signin</h2>
+                </a>
+              </div>
+              @endguest @auth
+              <div class="logout">
+                <form
+                  action="logout"
+                  method="post">
+                  @csrf
+                  <input
+                    type="submit"
+                    name="logoff"
+                    value="Log off" />
+                </form>
+              </div>
+              @endauth
+            </div>
+            <!--    <div class="about">
+                <ul>
+                    <li>Works</li>
+                    <li>About</li>
+                    <li>Contact</li>
+                </ul>
+            </div> -->
+            <div class="burger">
+              <div class="lanes">
+                <div class="lane1"></div>
+                <div class="lane2"></div>
+              </div>
+            </div>
+            <div class="sidecontainer">
+              <nav>
+                <ul>
+                  <a href="portfolio">
+                    <li
+                      class="{{request()->is('portfolio') ? 'tab_active' : 'return' }}">
+                      Home
+                    </li>
+                  </a>
+
+                  <li>About</li>
+                  <li>Services</li>
+                  <li>Works</li>
+                  <li>Connect</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="indexbody">
+            <div class="introduction">
+              <nav>
+                <ul>
+                  <li id="self">I am a :</li>
+                  <ul>
+                    <li id="skill2">Bi-lingual</li>
+                    <li id="skill3">Data Analyst</li>
+                    <li id="skill4">AI Developer</li>
+                    <li id="skill5">Full Stack Developer</li>
+                  </ul>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="aboutcontainer">
+            <div class="topic">
+              <h1>About</h1>
+            </div>
+            <div class="statement">
+              <h1>
+                My Goal is to Inspire alogrithms of Intuitiveness, Autonomy and
+                Creativity on the Web
+              </h1>
+            </div>
+          </div>
+          <div class="educontainer">
+            <div class="education">
+              <div class="edutitle">
+                <nav>
+                  <ul>
+                    <li>
+                      <h1>Education</h1>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="univeristy">
+                <nav>
+                  <ul>
+                    <li>
+                      <h1>University of Ghana</h1>
+                      <br />
+                      <h2>Bachelor of Arts Sociology, Russian</h2>
+                    </li>
+                    <li>
+                      <h1>University of Arizona</h1>
+                      <br />
+                      <h2>Master of Arts Russian, Linguistics</h2>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <hr style="width: 90vw; color: rgba(230, 230, 230, 0.86)" />
+            <div class="researchcontainer">
+              <div class="research">
+                <nav>
+                  <ul>
+                    <li>
+                      <h1>Research</h1>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="publications">
+                <nav>
+                  <ul>
+                    <li>
+                      <h1>University of Arizona</h1>
+                      <br />
+                      <h2>
+                        Cheating With ChatGPT: The Relationship Between Learner
+                        Autonomy, Engagement With AI for Learning, and Russian
+                        (L2) Learners’ Attitudes Towards ChatGPT as a Learning
+                        Tool
+                      </h2>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+          <div class="skillscontainer">
+            <div class="skills">
+              <nav>
+                <ul>
+                  <li>
+                    <h1>Skills</h1>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="tools">
+              <nav>
+                <ul>
+                  <li>
+                    <h1>Effiecient in</h1>
+                    <br />
+                    <h2>Russian Communication</h2>
+                    <h2>Laravel php</h2>
+                    <h2>React Js</h2>
+                    <h2>JavaScript</h2>
+                    <h2>Html5</h2>
+                    <h2>CSS</h2>
+                    <h2>Python</h2>
+                    <h2>Machine Learning / Deep Learninig</h2>
+                    <h2>MYSQL</h2>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <hr style="width: 90vw; color: rgba(230, 230, 230, 0.86)" />
+
+          <div class="workcontainer">
+            <div class="work">
+              <nav>
+                <ul>
+                  <li>
+                    <h1>Work</h1>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="experience">
+              <nav>
+                <ul>
+                  <li>
+                    <h1>University of Arizona</h1>
+                    <br />
+                    <h2>Graduate Teaching Assistant</h2>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="workscontainer">
+            <h2 style="letter-spacing: 2px">VIEW MY PROJECTS</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
