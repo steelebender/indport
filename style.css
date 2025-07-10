@@ -527,4 +527,12 @@ li {
   text-align: center;
   padding-top: 20vh;
   color: rgba(63, 62, 62, 0.792);
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    li {
+      font-size: 1.2em;
+    }
+  }
 }
