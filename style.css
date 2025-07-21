@@ -218,12 +218,12 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px -12vh;
-  height: 140vh;
+  height: 142vh;
   width: 100vw;
 }
 .overlay {
   background-color: rgba(12, 12, 12, 0.473);
-  height: 140vh;
+  height: 130vh;
   width: 100vw;
 }
 
@@ -269,7 +269,7 @@ li {
   }
 }
 .aboutcontainer {
-  margin-top: 40vh;
+  margin-top: 30vh;
   background-color: rgba(122, 79, 0, 0.761);
   color: rgba(255, 254, 254, 0.76);
   height: 100vh;
@@ -523,7 +523,7 @@ li {
 }
 .workscontainer {
   background-color: rgba(153, 153, 153, 0.088);
-  height: 100vh;
+  height: 240vh;
   text-align: center;
   padding-top: 20vh;
   color: rgba(63, 62, 62, 0.792);
