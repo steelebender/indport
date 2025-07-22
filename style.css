@@ -476,7 +476,6 @@ li {
   height: 60vh;
   display: flex;
   padding-left: 2vw;
-
   color: rgba(0, 0, 0, 0.726);
 
   .work {
@@ -523,8 +522,11 @@ li {
 }
 .workscontainer {
   background-color: rgba(153, 153, 153, 0.088);
-  height: 240vh;
+  height: 540vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20vh;
   padding-top: 20vh;
   color: rgba(63, 62, 62, 0.792);
   ul {
