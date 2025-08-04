@@ -6,6 +6,9 @@
   height: 100vh;
 }
 
+p {
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -522,7 +525,7 @@ li {
 }
 .workscontainer {
   background-color: rgba(153, 153, 153, 0.088);
-  height: 540vh;
+  height: 740vh;
   text-align: center;
   display: flex;
   flex-direction: column;
