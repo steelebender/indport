@@ -1,12 +1,19 @@
+/* Global Reset and Base */
 * {
   box-sizing: border-box;
   margin: 0;
-}
-.container {
-  height: 100vh;
+  padding: 0;
 }
 
-p {
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #eee;
+  background-color: #0c0c0c;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 a {
@@ -14,530 +21,316 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: #e44202;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
 .menucontainer {
-  color: rgba(255, 255, 255, 0.832);
-  display: flex;
-  height: 6.2vh;
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
 }
 
-.name {
-  font-size: 0.5em;
-  padding-top: 10.8px;
-  text-align: center;
-  width: 18vw;
-}
-.ux {
-  font-size: 0.8em;
-  padding-top: 10px;
-  width: 30vw;
-
-  ul {
-    display: flex;
-    gap: 6vw;
-
-    li {
-      cursor: pointer;
-      list-style: none;
-      margin-left: -4vw;
-    }
-  }
+.menucontainer.scrolled {
+  background-color: gray; /* or any dark color */
 }
 
-.about {
-  font-size: 0.8em;
-  padding-top: 10px;
-  padding-left: 15vw;
-  width: 40vw;
-
-  ul {
-    display: flex;
-    gap: 12px;
-
-    li {
-      list-style: none;
-      cursor: pointer;
-    }
-  }
+.menucontainer .name h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
 }
-.user {
-  padding-left: 15vw;
-  padding-top: 0.5vh;
-  text-align: center;
-  width: 10vw;
 
-  .useracc {
-    cursor: pointer;
-    height: 6vh;
-    width: 5vw;
-  }
+.menucontainer .ux ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+.menucontainer .ux li {
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.menucontainer .ux li:hover {
+  color: #e44202;
+}
+
+/* Connections */
+.connections {
+  display: flex;
+  gap: 10px;
+}
+
+.connections a img {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.connections a img:hover {
+  transform: scale(1.1);
+}
+
+.user .useracc {
+  width: 40px;
+  cursor: pointer;
 }
 
 .burger {
-  background-color: rgb(172, 50, 2);
-  height: 5.3vh;
-  margin-left: 8vw;
-  margin-top: 2px;
-  padding-top: 8px;
-  padding-left: 2.8px;
-  text-align: center;
-  text-align: center;
-  width: 4.8vw;
+  display: none; /* hidden on desktop */
+  background-color: #ac3202;
+  border: none;
   cursor: pointer;
-
-  .lanes {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    div {
-      width: 4vw;
-      background-color: rgba(233, 233, 233, 0.838);
-      height: 0.5vh;
-    }
-  }
+  padding: 6px 8px;
+  border-radius: 4px;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 32px;
 }
 
-.login {
-  display: flex;
-  font-size: 0.7em;
-  height: 5vh;
-  letter-spacing: 1px;
-  margin-top: 6vh;
-  margin-left: 70vw;
-  position: fixed;
-  visibility: hidden;
-  width: 20vw;
-
-  h2 {
-    cursor: pointer;
-  }
-  h2:hover {
-    scale: 1.01;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    transition: 0.4s ease-in-out;
-  }
-}
-.logout {
-  margin-left: 10vw;
-  input {
-    background-color: rgba(255, 255, 255, 0.778);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.5em;
-  }
-  input:hover {
-    background-color: rgba(128, 128, 128, 0.552);
-    color: white;
-    transition: 0.2s ease-in-out;
-  }
+.burger .lane {
+  display: block;
+  height: 3px;
+  background-color: rgba(233, 233, 233, 0.9);
+  border-radius: 2px;
+  margin-bottom: 4px;
 }
 
-.activate {
-  visibility: visible;
-}
-
+/* Side Navigation */
 .sidecontainer {
-  background-color: rgba(255, 255, 255, 0.212);
-  border: 1px solid rgba(128, 128, 128, 0.47);
-  margin-top: 8vh;
-  height: 60vh;
-  margin-left: 68vw;
   position: fixed;
-  padding-top: 5vh;
-  transform: translateX(150%);
-  transition: 0.4s ease-in-out;
-  width: 20vw;
+  top: 60px;
+  right: 0;
+  width: 180px;
+  height: calc(100vh - 60px);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 999;
+  overflow-y: auto;
+}
 
-  nav {
-    ul {
-      display: flex;
-      flex-direction: column;
-      gap: 6vh;
+.sidecontainer nav ul {
+  list-style: none;
+}
 
-      li {
-        cursor: pointer;
-        font-size: 1.2em;
-        text-decoration: underline;
-        text-underline-offset: 10px;
-        text-decoration-color: rgba(128, 128, 128, 0.699);
-        width: 8vw;
-        text-align: center;
-      }
-      li:hover {
-        scale: 1.1;
-      }
-    }
-  }
+.sidecontainer nav ul li {
+  margin-bottom: 24px;
+  font-size: 1.2rem;
+}
+
+.sidecontainer nav ul li a {
+  color: #eee;
+  transition: color 0.3s;
+}
+
+.sidecontainer nav ul li a:hover {
+  color: #e44202;
 }
 
 .sidecontainer.display {
   transform: translateX(0);
 }
 
-.indexbody.dim {
-  background-color: rgba(0, 0, 0, 0.767);
-  transition: 0.4s ease-in-out;
-
-  .introduction {
-    height: 50vh;
-    padding-top: 8vh;
-    nav {
-      color: rgba(255, 255, 255, 0.046);
-      margin-left: -5vw;
-    }
-  }
-}
-.connections {
-  display: flex;
-  gap: 1vw;
-  padding-top: 1.3vh;
-  div {
-    cursor: pointer;
-    height: 3vh;
-    padding-top: 1px;
-    text-align: center;
-    width: 4vw;
-    cursor: pointer;
-  }
-  img {
-    width: 55%;
-    cursor: pointer;
-  }
+/* Main content layout */
+main.indexbody {
+  margin-top: 60px; /* exactly menu height */
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  text-align: left;
 }
 
-.tab_active {
-  color: rgb(228, 66, 2);
-  text-underline-offset: 1px;
-  scale: 1.1;
+/* Sections fill full viewport width and flow without gaps */
+section {
+  margin: 0; /* remove gaps between sections */
+  text-align: left;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 20px 20px 20px 80px; /* increased left padding for all sections */
+  box-sizing: border-box;
 }
-li {
-  list-style: none;
-}
-.instance {
+
+/* Introduction with background image and dark overlay */
+.introduction {
+  position: relative;
+  height: 100vh;
   background-image: url("https://medias.gazette-drouot.com/prod/medias/mediatheque/96142.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 0px -12vh;
-  height: 142vh;
-  width: 100vw;
-}
-.overlay {
-  background-color: rgba(12, 12, 12, 0.473);
-  height: 130vh;
-  width: 100vw;
+  background-position: center;
+  overflow: hidden;
 }
 
-.indexbody {
-  height: 100vh;
-  .introduction {
-    height: 50vh;
-    padding-top: 8vh;
-    nav {
-      color: rgba(255, 255, 255, 0.849);
-      margin-left: -1vw;
-
-      #self {
-        font-size: 4em;
-        list-style: none;
-      }
-      #skill2,
-      #skill3,
-      #skill4,
-      #skill5,
-      #skill6 {
-        cursor: pointer;
-        font-size: 2em;
-        padding-left: 10vw;
-        width: 50vw;
-        letter-spacing: 1px;
-        margin-left: -4vw;
-      }
-      #skill2:hover,
-      #skill3:hover,
-      #skill4:hover,
-      #skill5:hover,
-      #skill6:hover {
-        scale: 1.05;
-        transition: 0.2s ease-in-out;
-      }
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 6vh;
-      }
-    }
-  }
+.introduction::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* black overlay 50% opacity */
+  pointer-events: none;
+  z-index: 1;
 }
+
+.introduction > * {
+  position: relative;
+  z-index: 2;
+}
+
+.introduction::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 12, 12, 0) 0%,
+    rgba(122, 79, 0, 0.76) 100%
+  );
+  pointer-events: none;
+}
+
+/* Force left align introduction content on all screen sizes */
+.introduction * {
+  text-align: left !important;
+}
+
+/* About container background */
 .aboutcontainer {
-  margin-top: 30vh;
-  background-color: rgba(122, 79, 0, 0.761);
-  color: rgba(255, 254, 254, 0.76);
-  height: 100vh;
-  padding-top: 10vh;
-  text-align: center;
-
-  .statement {
-    color: rgba(255, 254, 254, 0.76);
-    letter-spacing: 2px;
-    margin-top: 10vh;
-    padding: 10vh;
-    width: 100vw;
-  }
-}
-.educontainer {
-  height: 120vh;
-  background-color: rgba(40, 40, 40, 0.453);
-  color: rgba(255, 255, 255, 0.874);
-  padding-left: 2vw;
-
-  .education {
-    height: 60vh;
-    display: flex;
-    .edutitle {
-      width: 30vw;
-      height: 45vh;
-      padding-top: 15vh;
-      nav {
-        ul {
-          li {
-            text-decoration: underline;
-            text-underline-offset: 10px;
-          }
-        }
-      }
-    }
-    .univeristy {
-      padding-left: 5vw;
-      width: 68vw;
-      height: 45vh;
-      padding-top: 15vh;
-
-      nav {
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: 4vh;
-
-          li {
-            h1 {
-              font-size: 2em;
-              font-weight: bolder;
-              letter-spacing: 1px;
-            }
-            h2 {
-              font-size: 1.2em;
-              font-weight: lighter;
-              letter-spacing: 1px;
-            }
-          }
-        }
-      }
-    }
-  }
-  .researchcontainer {
-    height: 60vh;
-    display: flex;
-    .research {
-      width: 30vw;
-      height: 45vh;
-      padding-top: 15vh;
-      nav {
-        ul {
-          li {
-            text-decoration: underline;
-            text-underline-offset: 10px;
-          }
-        }
-      }
-    }
-    .publications {
-      padding-left: 5vw;
-      width: 68vw;
-      height: 45vh;
-      padding-top: 15vh;
-
-      nav {
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: 4vh;
-
-          li {
-            h1 {
-              font-size: 2em;
-              font-weight: bolder;
-              letter-spacing: 1px;
-            }
-            h2 {
-              font-size: 1.2em;
-              font-weight: lighter;
-              letter-spacing: 1px;
-            }
-          }
-        }
-      }
-    }
-  }
-  .skillscontainer {
-    height: 60vh;
-    display: flex;
-    .skills {
-      width: 30vw;
-      height: 45vh;
-      padding-top: 15vh;
-      nav {
-        ul {
-          li {
-            text-decoration: underline;
-            text-underline-offset: 10px;
-          }
-        }
-      }
-    }
-    .tools {
-      padding-left: 5vw;
-      width: 68vw;
-      height: 45vh;
-      padding-top: 15vh;
-
-      nav {
-        ul {
-          display: flex;
-          flex-direction: column;
-          gap: 4vh;
-
-          li {
-            h1 {
-              font-size: 2em;
-              font-weight: bolder;
-              letter-spacing: 1px;
-            }
-            h2 {
-              font-size: 1.2em;
-              font-weight: lighter;
-              letter-spacing: 1px;
-              margin-top: 1vh;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-.skillscontainer {
   height: 80vh;
-  display: flex;
-  padding-left: 2vw;
-
-  color: rgba(0, 0, 0, 0.726);
-  .skills {
-    width: 30vw;
-    height: 45vh;
-    padding-top: 15vh;
-    nav {
-      ul {
-        li {
-          text-decoration: underline;
-          text-underline-offset: 10px;
-        }
-      }
-    }
-  }
-  .tools {
-    padding-left: 5vw;
-    width: 68vw;
-    height: 45vh;
-    padding-top: 15vh;
-
-    nav {
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 4vh;
-
-        li {
-          h1 {
-            font-size: 2em;
-            font-weight: bolder;
-            letter-spacing: 1px;
-          }
-          h2 {
-            font-size: 1.2em;
-            font-weight: lighter;
-            letter-spacing: 1px;
-            margin-top: 1vh;
-          }
-        }
-      }
-    }
-  }
+  background-color: rgba(122, 79, 0, 0.761);
 }
+
+/* Education container */
+.educontainer {
+  border: 10px solid;
+  height: 100vh;
+  background-color: rgba(40, 40, 40, 0.453);
+}
+
+/* Work container */
 .workcontainer {
-  height: 60vh;
-  display: flex;
-  padding-left: 2vw;
-  color: rgba(0, 0, 0, 0.726);
+  border: 10px solid;
+  height: 80vh;
+}
 
-  .work {
-    width: 30vw;
-    height: 45vh;
-    padding-top: 15vh;
-    nav {
-      ul {
-        li {
-          text-decoration: underline;
-          text-underline-offset: 10px;
-        }
-      }
-    }
+/* Section headings */
+section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+  color: #ccc;
+}
+
+/* Paragraphs and list items */
+section p,
+section ul li {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  color: #ddd;
+}
+
+/* Lists */
+section ul {
+  list-style: disc inside;
+  padding-left: 20px;
+  text-align: left; /* keep list left aligned */
+}
+
+/* Remove bullet on first li in introduction */
+.introduction nav ul li#self {
+  list-style: none;
+  font-weight: bold;
+}
+
+/* Increase font size for all li inside introduction nav ul */
+.introduction nav ul li {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  color: #eee;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 900px) {
+  body {
+    padding: 0 10px;
   }
-  .experience {
-    padding-left: 5vw;
-    width: 68vw;
-    height: 45vh;
-    padding-top: 15vh;
-
-    nav {
-      ul {
-        display: flex;
-        flex-direction: column;
-        gap: 4vh;
-
-        li {
-          h1 {
-            font-size: 2em;
-            font-weight: bolder;
-            letter-spacing: 1px;
-          }
-          h2 {
-            font-size: 1.2em;
-            font-weight: lighter;
-            letter-spacing: 1px;
-            margin-top: 1vh;
-          }
-        }
-      }
-    }
+  .menucontainer .ux {
+    display: none;
+  }
+  .burger {
+    display: flex;
+  }
+  .sidecontainer {
+    width: 70vw;
+    max-width: 280px;
+  }
+  main.indexbody,
+  section,
+  section ul {
+    text-align: center;
+  }
+  section ul {
+    padding-left: 0;
+  }
+  main.indexbody {
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 0 20px;
+  }
+  /* Reduce all section left padding on smaller screens */
+  section {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  /* Force left align on introduction content */
+  .introduction * {
+    text-align: left !important;
   }
 }
-.workscontainer {
-  background-color: rgba(153, 153, 153, 0.088);
-  height: 740vh;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 20vh;
-  padding-top: 20vh;
-  color: rgba(63, 62, 62, 0.792);
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 5vh;
-    li {
-      font-size: 1.2em;
-    }
+
+@media screen and (max-width: 480px) {
+  section h1 {
+    font-size: 1.8rem;
+  }
+  section h2 {
+    font-size: 1.2rem;
+  }
+  section p,
+  section ul li {
+    font-size: 0.9rem;
   }
 }

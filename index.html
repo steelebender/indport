@@ -4,516 +4,380 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Layout</title>
+      content="width=device-width, initial-scale=1" />
+    <title>Clement Asemani Arhin Portfolio</title>
     <link
       rel="stylesheet"
       href="style.css" />
-
     <script
       src="functions.js"
       defer></script>
   </head>
   <body>
     <div class="container">
-      <div class="instance">
-        <div class="overlay">
-          <div class="menucontainer">
-            <div class="name">
-              <h2>Clement Asemani Arhin</h2>
-            </div>
-            <div class="ux">
-              <ul>
-                <li>UX / UI designer</li>
-                <li>AI programming</li>
-              </ul>
-            </div>
-            <div class="connections">
-              <div class="facebook">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/20/20837.png"
-                  alt="" />
-              </div>
-              <div class="linkedin">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/3128/3128219.png"
-                  alt="" />
-              </div>
-              <div class="ig">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/1384/1384031.png"
-                  alt="" />
-              </div>
-              <div class="git">
-                <img
-                  src="https://cdn-icons-png.flaticon.com/128/3291/3291695.png"
-                  alt="" />
-              </div>
-            </div>
-            <div class="user">
-              <div class="useracc">
-                <img
-                  width="70%"
-                  src="https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
-                  alt="" />
-              </div>
-            </div>
-            <div class="login">
-              @guest
-              <div class="signup">
-                <a href="signup">
-                  <h2>Signup</h2>
-                </a>
-              </div>
-              &nbsp;&nbsp;
-
-              <h2>/</h2>
-              &nbsp;&nbsp;
-
-              <div class="signin">
-                <a href="signin">
-                  <h2>Signin</h2>
-                </a>
-              </div>
-              @endguest @auth
-              <div class="logout">
-                <form
-                  action="logout"
-                  method="post">
-                  @csrf
-                  <input
-                    type="submit"
-                    name="logoff"
-                    value="Log off" />
-                </form>
-              </div>
-              @endauth
-            </div>
-            <!--    <div class="about">
-                <ul>
-                    <li>Works</li>
-                    <li>About</li>
-                    <li>Contact</li>
-                </ul>
-            </div> -->
-            <div class="burger">
-              <div class="lanes">
-                <div class="lane1"></div>
-                <div class="lane2"></div>
-              </div>
-            </div>
-            <div class="sidecontainer">
-              <nav>
-                <ul>
-                  <a href="./index.html">
-                    <li
-                      class="{{request()->is('portfolio') ? 'tab_active' : 'return' }}">
-                      Home
-                    </li>
-                  </a>
-
-                  <li>About</li>
-                  <li>Services</li>
-                  <li>Works</li>
-                  <li>Connect</li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="indexbody">
-            <div class="introduction">
-              <nav>
-                <ul>
-                  <li id="self">I am a :</li>
-                  <ul>
-                    <li id="skill2">Bi-lingual</li>
-                    <li id="skill3">Data Analyst</li>
-                    <li id="skill4">AI Developer</li>
-                    <li id="skill5">Full-Stack Developer</li>
-                  </ul>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="aboutcontainer">
-            <div class="topic">
-              <h1>Personal Value</h1>
-            </div>
-            <div class="statement">
-              <h1>
-                My Goal is to Inspire Alogrithms that Allow User Autonomy,
-                Creativity and Intuitiveness on the Web.
-              </h1>
-            </div>
-          </div>
-          <div class="educontainer">
-            <div class="education">
-              <div class="edutitle">
-                <nav>
-                  <ul>
-                    <li>
-                      <h1>Education</h1>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="univeristy">
-                <nav>
-                  <ul>
-                    <li>
-                      <h1>Indiana Wesleyan Univeristy</h1>
-                      <br />
-                      <h2>Master of Science AI- Data Anlaytics</h2>
-                    </li>
-                    <li>
-                      <h1>University of Arizona</h1>
-                      <br />
-                      <h2>Master of Arts Russian, Linguistics</h2>
-                    </li>
-                    <li>
-                      <h1>University of Ghana</h1>
-                      <br />
-                      <h2>Bachelor of Arts Sociology, Russian</h2>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <hr style="width: 90vw; color: rgba(230, 230, 230, 0.86)" />
-            <div class="researchcontainer">
-              <div class="research">
-                <nav>
-                  <ul>
-                    <li>
-                      <h1>Research</h1>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-              <div class="publications">
-                <nav>
-                  <ul>
-                    <li>
-                      <h1>University of Arizona</h1>
-                      <br />
-                      <h2>
-                        Cheating With ChatGPT: The Relationship Between Learner
-                        Autonomy, Engagement With AI for Learning, and Russian
-                        (L2) Learners’ Attitudes Towards ChatGPT as a Learning
-                        Tool
-                      </h2>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-          <div class="skillscontainer">
-            <div class="skills">
-              <nav>
-                <ul>
-                  <li>
-                    <h1>Skills</h1>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="tools">
-              <nav>
-                <ul>
-                  <li>
-                    <h1>Effiecient in</h1>
-                    <br />
-                    <h2>Russian Communication</h2>
-                    <h2>Laravel php</h2>
-                    <h2>React Js</h2>
-                    <h2>JavaScript</h2>
-                    <h2>Html5</h2>
-                    <h2>CSS</h2>
-                    <h2>Python</h2>
-                    <h2>Machine Learning / Deep Learninig</h2>
-                    <h2>MySQL/NoSQL</h2>
-                    <h2>Microsoft Excel</h2>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <hr style="width: 90vw; color: rgba(230, 230, 230, 0.86)" />
-
-          <div class="workcontainer">
-            <div class="work">
-              <nav>
-                <ul>
-                  <li>
-                    <h1>Work</h1>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="experience">
-              <nav>
-                <ul>
-                  <li>
-                    <h1>Igbans Institute</h1>
-                    <br />
-                    <h2>IT support</h2>
-                  </li>
-                </ul>
-                <br /><br />
-                <ul>
-                  <li>
-                    <h1>University of Arizona</h1>
-                    <br />
-                    <h2>Graduate Teaching Assistant</h2>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="workscontainer">
-            <ul>
-              <h2 style="letter-spacing: 2px">VIEW MY PROJECTS</h2>
-              <h3>Artifact 1</h3>
-              <li>
-                Title:
-                <p>A Timeline of Artificial Intelligence</p>
-              </li>
-              <li>
-                Introduction:
-                <p>
-                  Artificial Intelligence as a field was conceived as a
-                  philosophical idea before the 1940s, which then materialized
-                  into practical technology. This project documented the
-                  development of Artificial intelligence at each groundbreaking
-                  epoch from the 1940s to date.
-                </p>
-              </li>
-              <li>
-                Description:
-                <p>
-                  This artifact is flowchart that sequences the development of
-                  AI. Alan Turing, the pioneer of modern Artificial
-                  intelligence, started the most significant stage in the
-                  development process with the Turing Test in the 1950s.
-                  Subsequent developments are visualized in this flowchart to
-                  highlight the journey of AI advancement. The chart ends with
-                  the future of AI situating in General AI development—machines
-                  that can fully reason like human beings.
-                </p>
-              </li>
-              <li>
-                Objective:
-                <p>
-                  Primarily, this artifact enlightens stakeholders on the
-                  pedigree of Artificial Intelligence. Contrary to factions of
-                  public opinion that AI is ‘magic’, this artifact demonstrates
-                  how thorough and established Artificial Intelligence is. There
-                  are now several journal article publications that explore
-                  several aspects of Artificial Intelligence to advance the
-                  possibility of building an human-like machine. This artifact
-                  reveals this history behind AI.
-                </p>
-              </li>
-              <li>
-                Process:
-                <p>
-                  This artifact is a group project from the AIML-500 class. The
-                  group of four members collaborated to produce this artifact.
-                  The group brainstormed what sources we could utilize to find
-                  accurate information. We resolved to use sources like Google,
-                  Google Scholar, and ChatGPT. After identifying the relevant
-                  information we brainstormed how to convey this information as
-                  knowledge. The group decided to use Canva to design
-                  visualization for our information.
-                </p>
-              </li>
-              <li>
-                Tools/Technologies Used:
-                <p>Google Scholar, ChatGPT, Gemini, Google Canva</p>
-              </li>
-              <li>
-                Value Proposition:
-                <p>
-                  This artifact is valuable to employees, and other stakeholders
-                  who want to understand the background of Artificial
-                  Intelligence.
-                </p>
-              </li>
-              <li>
-                References:
-                <p>Dr. Sandra Metzger, Aaryaneil, Marilyn, Quingyuan</p>
-              </li>
-              <iframe
-                src="AI-Timeline.pdf"
-                width="100%"
-                height="600px"></iframe>
-            </ul>
-
-            <ul>
-              <h3>Artifact 2</h3>
-
-              <li>
-                Title:
-                <p>"Clements' Learning Assistant": Gemini AI chatbox</p>
-              </li>
-              <li>
-                Introduction:
-                <p>
-                  Artificial Intelligence development continues to elevate the
-                  user experience with chatbots. Whereas, simple chatbots would
-                  have GPT technology that makes it possible to have meaningful
-                  exchanges with chatbots. Nonetheless, chatbots generally have
-                  custom settings that may affect user experience. For example,
-                  for a programmer, verboseness of code may be unwanted.
-                  Contrarily for a humanities expert, more information on
-                  subjects may be relevant. So, this artifact demonstrates how a
-                  Gemini AI chatbox is tuned to fit a specific communication
-                  goal.
-                </p>
-              </li>
-              <li>
-                Description:
-                <p>
-                  The Artificial Intelligence tool used in this project is
-                  Google’s Gemini—an advanced multimodal AI model. Gemini can
-                  process and generate text, image, audio, video and code. This
-                  chatbox is suitable for users of every category. The chatbox
-                  that is presented here is tuned to the following parameters:
-                  <li>- Be my expert tutor</li>
-                  <li>- Provide references</li>
-                  <li>- Quiz me and provide feedback</li>
-                  <li>- Help me reflect on my learning</li>
-                </p>
-              </li>
-              <li>
-                Objective:
-                <p>
-                  This project demonstrates the capability of an AI chatbox to
-                  guide an autonomous learning process for students.
-                </p>
-              </li>
-              <li>
-                Process:
-                <p>
-                  I selected the AI tool that I wanted to work with—Gemini. I
-                  selected the explore gems option, new gem. In this section I
-                  chose my chatbox name, then I inserted the parameters. After
-                  that I saved these settings and my Chatbox was ready.
-                </p>
-              </li>
-
-              <li>
-                Tools/Technologies Used:
-                <p>Gemini</p>
-              </li>
-              <li>
-                Value Proposition:
-                <p>
-                  “Clements' Learning Assistant ” is an AI chatbox that
-                  facilitates an autonomous learning process for students and
-                  stakeholders. This chatbox makes sure to provide appropriate
-                  references to every information that the chatbox provides so
-                  that the AI generates only verifiable information. Also, the
-                  AI evaluates users on topics that the users seek to gain firm
-                  understanding. Finally, this AI chatbox guides users on a
-                  reflective process on knowledge obtained. Overall, this AI
-                  chatbox is streamlined to promote autonomous learning among
-                  users.
-                </p>
-              </li>
-              <li>
-                References:
-                <p>Dr. Sandra Metzger</p>
-              </li>
-              <a
-                href="https://gemini.google.com/gem/59a84effe64a"
-                id="chatbox">
-                <img
-                  width="100%"
-                  src="Clement's_Learning_Assistant.jpg"
-                  alt=""
-              /></a>
-            </ul>
-            <ul>
-              <h3>Artifact 3</h3>
-
-              <li>
-                Title:
-                <p>Simplifying the concept of Neural Networks</p>
-              </li>
-              <li>
-                Introduction:
-                <p>
-                  In Artificial Intelligence, neural networks are a very
-                  important aspect of building intelligent machines. Modeled
-                  according to how neurons in the human brain function,
-                  artificial neural networks are complex mathematical structures
-                  that facilitate computer reasoning processes. Neural networks
-                  enable computers to learn from features of a dataset, then
-                  make predictions.
-                </p>
-              </li>
-              <li>
-                Description:
-                <p>
-                  This project seeks to explain what neural networks are by
-                  interacting with an AI tool—ChatGPT. Through this engagement,
-                  I try to ascertain the level of intelligence that the AI tool
-                  will display. Also, I seek to demonstrate the ability of this
-                  AI tool to learn from previous experiences.
-                </p>
-              </li>
-              <li>
-                Objective:
-                <p>
-                  The main objective of this project is to explain what neural
-                  networks are in the simplest form using ChatGPT as an AI
-                  resource.
-                </p>
-              </li>
-              <li>
-                Process:
-                <p>
-                  I accessed my account on OpenAI’s ChatGPT chatbox, then I
-                  inserted the prompt ‘what are neural networks’. Based on the
-                  responses, I queried the AI more to get specific responses
-                  that suit the goal of this project. I screen recorded this
-                  interaction, saved the video and then uploaded it on my
-                  Youtube channel.
-                </p>
-              </li>
-
-              <li>
-                Tools/Technologies Used:
-                <p>Apple Iphone, ChatGPT, Youtube</p>
-              </li>
-              <li>
-                Value Proposition:
-                <p>
-                  This project is suitable for anyone who seeks to understand
-                  the building blocks of super intelligent machines that perform
-                  tasks such as facial recognition technology, autonomous
-                  vehicle driving, and image generation.
-                </p>
-              </li>
-              <li>
-                References:
-                <p>Dr. Sandra Metzger</p>
-              </li>
-              <iframe
-                width="660"
-                height="615"
-                src="https://www.youtube.com/embed/YfHtRKtjg78"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen>
-              </iframe>
-            </ul>
-          </div>
+      <header class="menucontainer">
+        <div class="name"><h2>Clement Asemani Arhin</h2></div>
+        <nav class="ux">
+          <ul>
+            <li>UX / UI designer</li>
+            <li>AI programming</li>
+          </ul>
+        </nav>
+        <div class="connections">
+          <a
+            href="#"
+            class="facebook"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/128/20/20837.png"
+              alt="Facebook"
+          /></a>
+          <a
+            href="#"
+            class="linkedin"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/128/3128/3128219.png"
+              alt="LinkedIn"
+          /></a>
+          <a
+            href="#"
+            class="ig"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/128/1384/1384031.png"
+              alt="Instagram"
+          /></a>
+          <a
+            href="#"
+            class="git"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/128/3291/3291695.png"
+              alt="GitHub"
+          /></a>
         </div>
-      </div>
+        <div class="user">
+          <img
+            class="useracc"
+            width="40"
+            src="https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
+            alt="User Account" />
+        </div>
+        <button
+          id="burger"
+          class="burger"
+          aria-label="Toggle menu">
+          <span class="lane"></span>
+          <span class="lane"></span>
+          <span class="lane"></span>
+        </button>
+      </header>
+
+      <aside
+        class="sidecontainer"
+        id="sidecontainer"
+        aria-hidden="true">
+        <nav>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#services-section">Services</a></li>
+            <li><a href="#works-section">Works</a></li>
+            <li><a href="#connect-section">Connect</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="indexbody">
+        <section class="introduction">
+          <nav>
+            <ul>
+              <li id="self">I am a :</li>
+              <li id="skill2">Bi-lingual</li>
+              <li id="skill3">Data Analyst</li>
+              <li id="skill4">AI Developer</li>
+              <li id="skill5">Full-Stack Developer</li>
+            </ul>
+          </nav>
+        </section>
+
+        <section
+          id="about-section"
+          class="aboutcontainer">
+          <h1>Personal Value</h1>
+          <p>
+            My Goal is to Inspire Algorithms that Allow User Autonomy,
+            Creativity and Intuitiveness on the Web.
+          </p>
+        </section>
+
+        <section
+          id="education-section"
+          class="educontainer">
+          <div class="education">
+            <h1>Education</h1>
+            <ul>
+              <li>
+                <h2>Indiana Wesleyan University</h2>
+                <p>Master of Science AI- Data Analytics</p>
+              </li>
+              <li>
+                <h2>University of Arizona</h2>
+                <p>Master of Arts Russian, Linguistics</p>
+              </li>
+              <li>
+                <h2>University of Ghana</h2>
+                <p>Bachelor of Arts Sociology, Russian</p>
+              </li>
+            </ul>
+          </div>
+
+          <hr />
+
+          <div class="researchcontainer">
+            <h1>Research</h1>
+            <ul>
+              <li>
+                <h2>University of Arizona</h2>
+                <p>
+                  Cheating With ChatGPT: The Relationship Between Learner
+                  Autonomy, Engagement With AI for Learning, and Russian (L2)
+                  Learners’ Attitudes Towards ChatGPT as a Learning Tool
+                </p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="skillscontainer">
+          <div class="skills">
+            <h1>Skills</h1>
+          </div>
+          <div class="tools">
+            <h1>Efficient in</h1>
+            <ul>
+              <li>Russian Communication</li>
+              <li>Laravel PHP</li>
+              <li>React JS</li>
+              <li>JavaScript</li>
+              <li>HTML5</li>
+              <li>CSS</li>
+              <li>Python</li>
+              <li>Machine Learning / Deep Learning</li>
+              <li>MySQL / NoSQL</li>
+              <li>Microsoft Excel</li>
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id="work-section"
+          class="workcontainer">
+          <div class="work">
+            <h1>Work</h1>
+          </div>
+          <div class="experience">
+            <ul>
+              <li>
+                <h2>Igbans Institute</h2>
+                <p>IT Support</p>
+              </li>
+              <li>
+                <h2>University of Arizona</h2>
+                <p>Graduate Teaching Assistant</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section
+          id="works-section"
+          class="workscontainer">
+          <h2>VIEW MY PROJECTS</h2>
+          <!-- Artifact 1 -->
+          <article>
+            <h3>Artifact 1</h3>
+            <p><strong>Title:</strong> A Timeline of Artificial Intelligence</p>
+            <p>
+              <strong>Introduction:</strong> Artificial Intelligence as a field
+              was conceived as a philosophical idea before the 1940s, which then
+              materialized into practical technology. This project documented
+              the development of Artificial intelligence at each groundbreaking
+              epoch from the 1940s to date.
+            </p>
+            <p>
+              <strong>Description:</strong> This artifact is flowchart that
+              sequences the development of AI. Alan Turing, the pioneer of
+              modern Artificial intelligence, started the most significant stage
+              in the development process with the Turing Test in the 1950s.
+              Subsequent developments are visualized in this flowchart to
+              highlight the journey of AI advancement. The chart ends with the
+              future of AI situating in General AI development—machines that can
+              fully reason like human beings.
+            </p>
+            <p>
+              <strong>Objective:</strong> Primarily, this artifact enlightens
+              stakeholders on the pedigree of Artificial Intelligence. Contrary
+              to factions of public opinion that AI is ‘magic’, this artifact
+              demonstrates how thorough and established Artificial Intelligence
+              is. There are now several journal article publications that
+              explore several aspects of Artificial Intelligence to advance the
+              possibility of building an human-like machine. This artifact
+              reveals this history behind AI.
+            </p>
+            <p>
+              <strong>Process:</strong> This artifact is a group project from
+              the AIML-500 class. The group of four members collaborated to
+              produce this artifact. The group brainstormed what sources we
+              could utilize to find accurate information. We resolved to use
+              sources like Google, Google Scholar, and ChatGPT. After
+              identifying the relevant information we brainstormed how to convey
+              this information as knowledge. The group decided to use Canva to
+              design visualization for our information.
+            </p>
+            <p>
+              <strong>Tools/Technologies Used:</strong> Google Scholar, ChatGPT,
+              Gemini, Google Canva
+            </p>
+            <p>
+              <strong>Value Proposition:</strong> This artifact is valuable to
+              employees, and other stakeholders who want to understand the
+              background of Artificial Intelligence.
+            </p>
+            <p>
+              <strong>References:</strong> Dr. Sandra Metzger, Aaryaneil,
+              Marilyn, Quingyuan
+            </p>
+            <iframe
+              src="AI-Timeline.pdf"
+              width="100%"
+              height="600"
+              title="AI Timeline PDF"></iframe>
+          </article>
+
+          <!-- Artifact 2 -->
+          <article>
+            <h3>Artifact 2</h3>
+            <p>
+              <strong>Title:</strong> "Clements' Learning Assistant": Gemini AI
+              chatbox
+            </p>
+            <p>
+              <strong>Introduction:</strong> Artificial Intelligence development
+              continues to elevate the user experience with chatbots. Whereas,
+              simple chatbots would have GPT technology that makes it possible
+              to have meaningful exchanges with chatbots. Nonetheless, chatbots
+              generally have custom settings that may affect user experience.
+              For example, for a programmer, verboseness of code may be
+              unwanted. Contrarily for a humanities expert, more information on
+              subjects may be relevant. So, this artifact demonstrates how a
+              Gemini AI chatbox is tuned to fit a specific communication goal.
+            </p>
+            <p>
+              <strong>Description:</strong> The Artificial Intelligence tool
+              used in this project is Google’s Gemini—an advanced multimodal AI
+              model. Gemini can process and generate text, image, audio, video
+              and code. This chatbox is suitable for users of every category.
+              The chatbox that is presented here is tuned to the following
+              parameters:
+            </p>
+            <ul>
+              <li>Be my expert tutor</li>
+              <li>Provide references</li>
+              <li>Quiz me and provide feedback</li>
+              <li>Help me reflect on my learning</li>
+            </ul>
+            <p>
+              <strong>Objective:</strong> This project demonstrates the
+              capability of an AI chatbox to guide an autonomous learning
+              process for students.
+            </p>
+            <p>
+              <strong>Process:</strong> I selected the AI tool that I wanted to
+              work with—Gemini. I selected the explore gems option, new gem. In
+              this section I chose my chatbox name, then I inserted the
+              parameters. After that I saved these settings and my Chatbox was
+              ready.
+            </p>
+            <p><strong>Tools/Technologies Used:</strong> Gemini</p>
+            <p>
+              <strong>Value Proposition:</strong> “Clements' Learning Assistant
+              ” is an AI chatbox that facilitates an autonomous learning process
+              for students and stakeholders. This chatbox makes sure to provide
+              appropriate references to every information that the chatbox
+              provides so that the AI generates only verifiable information.
+              Also, the AI evaluates users on topics that the users seek to gain
+              firm understanding. Finally, this AI chatbox guides users on a
+              reflective process on knowledge obtained. Overall, this AI chatbox
+              is streamlined to promote autonomous learning among users.
+            </p>
+            <p><strong>References:</strong> Dr. Sandra Metzger</p>
+            <a
+              href="https://gemini.google.com/gem/59a84effe64a"
+              target="_blank"
+              rel="noopener noreferrer">
+              <img
+                src="Clement's_Learning_Assistant.jpg"
+                alt="Clements' Learning Assistant"
+                width="100%" />
+            </a>
+          </article>
+
+          <!-- Artifact 3 -->
+          <article>
+            <h3>Artifact 3</h3>
+            <p>
+              <strong>Title:</strong> Simplifying the concept of Neural Networks
+            </p>
+            <p>
+              <strong>Introduction:</strong> In Artificial Intelligence, neural
+              networks are a very important aspect of building intelligent
+              machines. Modeled according to how neurons in the human brain
+              function, artificial neural networks are complex mathematical
+              structures that facilitate computer reasoning processes. Neural
+              networks enable computers to learn from features of a dataset,
+              then make predictions.
+            </p>
+            <p>
+              <strong>Description:</strong> This project seeks to explain what
+              neural networks are by interacting with an AI tool—ChatGPT.
+              Through this engagement, I try to ascertain the level of
+              intelligence that the AI tool will display. Also, I seek to
+              demonstrate the ability of this AI tool to learn from previous
+              experiences.
+            </p>
+            <p>
+              <strong>Objective:</strong> The main objective of this project is
+              to explain what neural networks are in the simplest form using
+              ChatGPT as an AI resource.
+            </p>
+            <p>
+              <strong>Process:</strong> I accessed my account on OpenAI’s
+              ChatGPT chatbox, then I inserted the prompt ‘what are neural
+              networks’. Based on the responses, I queried the AI more to get
+              specific responses that suit the goal of this project. I screen
+              recorded this interaction, saved the video and then uploaded it on
+              my Youtube channel.
+            </p>
+            <p>
+              <strong>Tools/Technologies Used:</strong> Apple iPhone, ChatGPT,
+              Youtube
+            </p>
+            <p>
+              <strong>Value Proposition:</strong> This project is suitable for
+              anyone who seeks to understand the building blocks of super
+              intelligent machines that perform tasks such as facial recognition
+              technology, autonomous vehicle driving, and image generation.
+            </p>
+            <p><strong>References:</strong> Dr. Sandra Metzger</p>
+            <iframe
+              width="660"
+              height="370"
+              src="https://www.youtube.com/embed/YfHtRKtjg78"
+              title="YouTube video player"
+              frameborder="0"
+              allowfullscreen></iframe>
+          </article>
+        </section>
+      </main>
     </div>
   </body>
 </html>
+doe this look professional?

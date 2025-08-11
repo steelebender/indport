@@ -1,38 +1,51 @@
 const useracc = document.querySelector(".useracc");
-const login = document.querySelector(".login");
 const signup = document.querySelector(".signup");
 const burger = document.querySelector(".burger");
 const indexbody = document.querySelector(".indexbody");
+const menucontainer = document.querySelector(".menucontainer");
+const dbody = document.body;
+
+dbody.addEventListener("click", (e) => {
+  console.log(e.target);
+});
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > window.innerHeight) {
+    menucontainer.classList.add("scrolled"); // scroll past first page → dark bg
+  } else {
+    menucontainer.classList.remove("scrolled"); // top of page → transparent bg
+  }
+});
 
 const sidecontainer = document.querySelector(".sidecontainer");
 const body = document.body;
 
-useracc.addEventListener("click", function () {
-  login.classList.add("activate");
-});
+// Toggle login menu on user icon click
 
-body.addEventListener("click", function (event) {
-  console.log(event.target);
-  if (!login.contains(event.target) && !useracc.contains(event.target)) {
-    login.classList.remove("activate");
-  }
-});
+// Track side menu open state
+let sideMenuOpen = false;
 
-burger.addEventListener("click", function () {
+burger.addEventListener("click", function (e) {
+  e.stopPropagation(); // prevent immediate closing by body click
   sidecontainer.classList.toggle("display");
-  if (!indexbody.classList.contains("dim")) {
-    2;
+  sideMenuOpen = sidecontainer.classList.contains("display");
+
+  if (sideMenuOpen) {
     indexbody.classList.add("dim");
   } else {
     indexbody.classList.remove("dim");
   }
-  body.addEventListener("click", function (event) {
-    if (
-      !burger.contains(event.target) &&
-      !sidecontainer.contains(event.target)
-    ) {
-      indexbody.classList.remove("dim");
-      sidecontainer.classList.remove("display");
-    }
-  });
+});
+
+// Close side menu if clicking outside
+body.addEventListener("click", function (event) {
+  if (
+    sideMenuOpen &&
+    !burger.contains(event.target) &&
+    !sidecontainer.contains(event.target)
+  ) {
+    sidecontainer.classList.remove("display");
+    indexbody.classList.remove("dim");
+    sideMenuOpen = false;
+  }
 });
