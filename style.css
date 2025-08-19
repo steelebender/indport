@@ -84,7 +84,7 @@ a:hover {
 }
 
 .user .useracc {
-  width: 40px;
+  width: 30px;
   cursor: pointer;
 }
 
@@ -362,6 +362,11 @@ section {
         list-style: disc;
         font-size: 1.4em;
       }
+    }
+    article {
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
     }
   }
 }
