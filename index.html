@@ -1,695 +1,179 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1" />
-    <title>Clement Asemani Arhin Portfolio</title>
+      content="width=device-width, initial-scale=1.0" />
+    <title>Clement Asemani Arhin | AI Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
-      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer" />
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Custom CSS -->
     <link
       rel="stylesheet"
       href="style.css" />
-    <script
-      src="functions.js"
-      defer></script>
   </head>
   <body>
-    <div class="container">
-      <header class="menucontainer">
-        <div class="name"><h2>Clement Asemani Arhin</h2></div>
-        <nav class="ux">
-          <ul>
-            <li>UX / UI designer</li>
-            <li>AI programming</li>
-          </ul>
-        </nav>
-        <div class="connections">
-          <a
-            href="#"
-            class="facebook"
-            ><i class="fa-brands fa-facebook-f"></i
-          ></a>
-          <a
-            href="#"
-            class="linkedin"
-            ><i class="fa-brands fa-linkedin-in"></i
-          ></a>
-          <a
-            href="#"
-            class="ig"
-            ><i class="fa-brands fa-instagram"></i
-          ></a>
-          <a
-            href="#"
-            class="git"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-        </div>
-        <div class="user">
-          <img
-            class="useracc"
-            src="https://cdn-icons-png.flaticon.com/128/1177/1177568.png"
-            alt="User Account" />
-        </div>
-        <button
-          id="burger"
-          class="burger"
-          aria-label="Toggle menu">
-          <span class="lane"></span>
-          <span class="lane"></span>
-          <span class="lane"></span>
-        </button>
-      </header>
-      <aside
-        class="sidecontainer"
-        id="sidecontainer"
-        aria-hidden="true">
+    <!-- HEADER / NAVBAR -->
+    <header>
+      <div class="nav-container">
+        <h1 class="logo">Clement Asemani Arhin</h1>
         <nav>
           <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="#about-section">About</a></li>
-            <li><a href="#services-section">Services</a></li>
-            <li><a href="#works-section">Works</a></li>
-            <li><a href="#connect-section">Connect</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#work">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
           </ul>
         </nav>
-      </aside>
-      <main class="indexbody">
-        <section class="introduction">
-          <nav>
-            <ul>
-              <li id="self">I am a :</li>
-              <ul>
-                <li id="skill2">Bi-lingual</li>
-                <li id="skill3">Data Analyst</li>
-                <li id="skill4">AI Developer</li>
-                <li id="skill5">Full Stack Developer</li>
-              </ul>
-            </ul>
-          </nav>
-        </section>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </header>
 
-        <section
-          id="about-section"
-          class="aboutcontainer">
-          <h1>Personal Value</h1>
-          <p>
-            My Goal is to Inspire Algorithms that Allow User Autonomy,
-            Creativity and Intuitiveness on the Web.
-          </p>
-        </section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <h2>Clement Asemani Arhin</h2>
+      <p class="subtitle">
+        Artificial Intelligence Developer • Data Analyst • Full-Stack Developer
+      </p>
+      <p class="description">
+        I develop intelligent systems, machine learning models, and data-driven
+        solutions to improve technology interaction.
+      </p>
+    </section>
 
-        <section
-          id="education-section"
-          class="educontainer">
-          <div class="education">
-            <h1>Education</h1>
-            <ul>
-              <li>
-                <h2>Indiana Wesleyan University</h2>
-                <p>Master of Science AI- Data Analytics</p>
-              </li>
-              <li>
-                <h2>University of Arizona</h2>
-                <p>Master of Arts Russian, Linguistics</p>
-              </li>
-              <li>
-                <h2>University of Ghana</h2>
-                <p>Bachelor of Arts Sociology, Russian</p>
-              </li>
-            </ul>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        My goal is to inspire algorithms that allow user autonomy, creativity,
+        and intuitiveness on the web. My academic and professional journey
+        focuses on Artificial Intelligence, machine learning systems, and data
+        analytics.
+      </p>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education">
+      <h2>Education</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Indiana Wesleyan University</h3>
+          <p>Master of Science — AI & Data Analytics</p>
+        </div>
+        <div class="card">
+          <h3>University of Arizona</h3>
+          <p>Master of Arts — Russian Linguistics</p>
+        </div>
+        <div class="card">
+          <h3>University of Ghana</h3>
+          <p>Bachelor of Arts — Sociology & Russian</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span>Python</span>
+        <span>Machine Learning</span>
+        <span>Deep Learning</span>
+        <span>Data Analysis</span>
+        <span>React</span>
+        <span>JavaScript</span>
+        <span>Laravel</span>
+        <span>HTML5</span>
+        <span>CSS</span>
+        <span>SQL</span>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE SECTION -->
+    <section id="work">
+      <h2>Experience</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Igbans Institute</h3>
+          <p>IT Support</p>
+        </div>
+        <div class="card">
+          <h3>University of Arizona</h3>
+          <p>Graduate Teaching Assistant</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <h2>Selected Project</h2>
+      <article class="project">
+        <div class="project-content">
+          <div class="project-text">
+            <h3>Artifact 6 — Machine Learning Algorithms Visual Framework</h3>
+
+            <p>
+              <strong>Introduction:</strong> Machine Learning is an important
+              branch of Artificial Intelligence that allows computers to learn
+              patterns from data and make predictions without being explicitly
+              programmed for every task. This project focuses on understanding
+              several common machine learning algorithms and organizing them
+              into supervised and unsupervised learning categories.
+            </p>
+
+            <p>
+              <strong>Description:</strong> This artifact is an infographic
+              presenting ten machine learning algorithms, divided into
+              supervised (Decision Tree, Random Forest, SVM, KNN, Neural
+              Networks) and unsupervised (K-Means, DBSCAN, PCA, Apriori,
+              Hierarchical Clustering). Each algorithm includes applications and
+              real-world examples.
+            </p>
+
+            <p>
+              <strong>Objective:</strong> Provide a visual framework to help
+              viewers understand algorithm categorization and applications.
+            </p>
+            <p>
+              <strong>Process:</strong> I researched commonly used algorithms,
+              organized them into groups, and designed the infographic for
+              clarity.
+            </p>
+            <p>
+              <strong>Tools:</strong> ChatGPT, Online Research, Infographic
+              Design Tools
+            </p>
+            <p>
+              <strong>Value Proposition:</strong> Helps students, educators, and
+              professionals understand how algorithms work and when to use them.
+            </p>
+            <p><strong>References:</strong> Dr. Eskinder Belete</p>
           </div>
-          <br /><br /><br />
-          <hr style="width: 90vw; color: rgba(230, 230, 230, 0.86)" />
-          <br /><br /><br />
-          <div class="researchcontainer">
-            <h1>Research</h1>
-            <ul>
-              <li>
-                <h2>University of Arizona</h2>
-                <p>
-                  Cheating With ChatGPT: The Relationship Between Learner
-                  Autonomy, Engagement With AI for Learning, and Russian (L2)
-                  Learners’ Attitudes Towards ChatGPT as a Learning Tool
-                </p>
-              </li>
-            </ul>
+          <div class="project-image">
+            <iframe
+              src="3ba8fe2e-44eb-4406-a794-a060dc10a31b.png"
+              title="Machine Learning Infographic"></iframe>
           </div>
-        </section>
+        </div>
+      </article>
+    </section>
 
-        <section class="skillscontainer">
-          <div class="skills">
-            <h1>Skills</h1>
-          </div>
-          <div class="tools">
-            <h1>Efficient in</h1>
-            <ul>
-              <li>Russian Communication</li>
-              <li>Laravel PHP</li>
-              <li>React JS</li>
-              <li>JavaScript</li>
-              <li>HTML5</li>
-              <li>CSS</li>
-              <li>Python</li>
-              <li>Machine Learning / Deep Learning</li>
-              <li>MySQL / NoSQL</li>
-              <li>Microsoft Excel</li>
-            </ul>
-          </div>
-        </section>
-        <br /><br /><br />
-        <br /><br /><br />
-        <hr
-          style="
-            width: 50%vw;
-            color: rgba(148, 143, 143, 0.263);
-            margin-top: 5vh;
-          " />
-
-        <section
-          id="work-section"
-          class="workcontainer">
-          <div class="work">
-            <h1>Work</h1>
-          </div>
-          <div class="experience">
-            <ul>
-              <li>
-                <h2>Igbans Institute</h2>
-                <p>IT Support</p>
-              </li>
-              <li>
-                <h2>University of Arizona</h2>
-                <p>Graduate Teaching Assistant</p>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <section
-          id="works-section"
-          class="workscontainer">
-          <h2 style="text-align: center">VIEW MY PROJECTS</h2>
-          <div class="articles">
-            <article>
-              <h1>Artifact 1</h1>
-              <p>
-                <strong>Title:</strong> A Timeline of Artificial Intelligence
-              </p>
-              <p>
-                <strong>Introduction:</strong> Artificial Intelligence as a
-                field was conceived as a philosophical idea before the 1940s,
-                which then materialized into practical technology. This project
-                documented the development of Artificial intelligence at each
-                groundbreaking epoch from the 1940s to date.
-              </p>
-              <p>
-                <strong>Description:</strong> This artifact is flowchart that
-                sequences the development of AI. Alan Turing, the pioneer of
-                modern Artificial intelligence, started the most significant
-                stage in the development process with the Turing Test in the
-                1950s. Subsequent developments are visualized in this flowchart
-                to highlight the journey of AI advancement. The chart ends with
-                the future of AI situating in General AI development—machines
-                that can fully reason like human beings.
-              </p>
-              <p>
-                <strong>Objective:</strong> Primarily, this artifact enlightens
-                stakeholders on the pedigree of Artificial Intelligence.
-                Contrary to factions of public opinion that AI is ‘magic’, this
-                artifact demonstrates how thorough and established Artificial
-                Intelligence is. There are now several journal article
-                publications that explore several aspects of Artificial
-                Intelligence to advance the possibility of building an
-                human-like machine. This artifact reveals this history behind
-                AI.
-              </p>
-              <p>
-                <strong>Process:</strong> This artifact is a group project from
-                the AIML-500 class. The group of four members collaborated to
-                produce this artifact. The group brainstormed what sources we
-                could utilize to find accurate information. We resolved to use
-                sources like Google, Google Scholar, and ChatGPT. After
-                identifying the relevant information we brainstormed how to
-                convey this information as knowledge. The group decided to use
-                Canva to design visualization for our information.
-              </p>
-              <p>
-                <strong>Tools/Technologies Used: </strong> Google Scholar,
-                ChatGPT, Gemini, Google Canva
-              </p>
-              <p>
-                <strong>Value Proposition:</strong> This artifact is valuable to
-                employees, and other stakeholders who want to understand the
-                background of Artificial Intelligence.
-              </p>
-              <p>
-                <strong>References:</strong> Dr. Sandra Metzger, Aaryaneil,
-                Marilyn, Quingyuan
-              </p>
-              <iframe
-                src="AI-Timeline.pdf"
-                width="100%"
-                height="600"
-                title="AI Timeline PDF"></iframe>
-            </article>
-
-            <article>
-              <h1>Artifact 2</h1>
-              <p>
-                <strong>Title:</strong> "Clement's Learning Assistant": Gemini
-                AI chatbox
-              </p>
-              <p>
-                <strong>Introduction:</strong> Artificial Intelligence
-                development continues to elevate the user experience with
-                chatbots. Whereas, simple chatbots would have GPT technology
-                that makes it possible to have meaningful exchanges with
-                chatbots. Nonetheless, chatbots generally have custom settings
-                that may affect user experience. For example, for a programmer,
-                verboseness of code may be unwanted. Contrarily for a humanities
-                expert, more information on subjects may be relevant. So, this
-                artifact demonstrates how a Gemini AI chatbox is tuned to fit a
-                specific communication goal.
-              </p>
-              <p>
-                <strong>Description:</strong> The Artificial Intelligence tool
-                used in this project is Google’s Gemini—an advanced multimodal
-                AI model. Gemini can process and generate text, image, audio,
-                video and code. This chatbox is suitable for users of every
-                category. The chatbox that is presented here is tuned to the
-                following parameters:
-              </p>
-              <ul>
-                <li>Be my expert tutor</li>
-                <li>Provide references</li>
-                <li>Quiz me and provide feedback</li>
-                <li>Help me reflect on my learning</li>
-              </ul>
-              <p>
-                <strong>Objective:</strong> This project demonstrates the
-                capability of an AI chatbox to guide an autonomous learning
-                process for students.
-              </p>
-              <p>
-                <strong>Process:</strong> I selected the AI tool that I wanted
-                to work with—Gemini. I selected the explore gems option, new
-                gem. In this section I chose my chatbox name, then I inserted
-                the parameters. After that I saved these settings and my Chatbox
-                was ready.
-              </p>
-              <p><strong>Tools/Technologies Used: </strong> Gemini</p>
-              <p>
-                <strong>Value Proposition:</strong> “Clements' Learning
-                Assistant ” is an AI chatbox that facilitates an autonomous
-                learning process for students and stakeholders. This chatbox
-                makes sure to provide appropriate references to every
-                information that the chatbox provides so that the AI generates
-                only verifiable information. Also, the AI evaluates users on
-                topics that the users seek to gain firm understanding. Finally,
-                this AI chatbox guides users on a reflective process on
-                knowledge obtained. Overall, this AI chatbox is streamlined to
-                promote autonomous learning among users.
-              </p>
-              <p><strong>References:</strong> Dr. Sandra Metzger</p>
-              <a
-                href="https://gemini.google.com/gem/59a84effe64a"
-                target="_blank"
-                rel="noopener noreferrer">
-                <img
-                  src="Clement's_Learning_Assistant.jpg"
-                  alt="Clements' Learning Assistant"
-                  width="100%" />
-              </a>
-            </article>
-
-            <!-- Artifact 3 -->
-            <article>
-              <h1>Artifact 3</h1>
-              <p>
-                <strong>Title:</strong> Simplifying the concept of Neural
-                Networks
-              </p>
-              <p>
-                <strong>Introduction:</strong> In Artificial Intelligence,
-                neural networks are a very important aspect of building
-                intelligent machines. Modeled according to how neurons in the
-                human brain function, artificial neural networks are complex
-                mathematical structures that facilitate computer reasoning
-                processes. Neural networks enable computers to learn from
-                features of a dataset, then make predictions.
-              </p>
-              <p>
-                <strong>Description:</strong> This project seeks to explain what
-                neural networks are by interacting with an AI tool—ChatGPT.
-                Through this engagement, I try to ascertain the level of
-                intelligence that the AI tool will display. Also, I seek to
-                demonstrate the ability of this AI tool to learn from previous
-                experiences.
-              </p>
-              <p>
-                <strong>Objective:</strong> The main objective of this project
-                is to explain what neural networks are in the simplest form
-                using ChatGPT as an AI resource.
-              </p>
-              <p>
-                <strong>Process:</strong> I accessed my account on OpenAI’s
-                ChatGPT chatbox, then I inserted the prompt ‘what are neural
-                networks’. Based on the responses, I queried the AI more to get
-                specific responses that suit the goal of this project. I screen
-                recorded this interaction, saved the video and then uploaded it
-                on my Youtube channel.
-              </p>
-              <p>
-                <strong>Tools/Technologies Used: </strong> Apple iPhone,
-                ChatGPT, Youtube
-              </p>
-              <p>
-                <strong>Value Proposition:</strong> This project is suitable for
-                anyone who seeks to understand the building blocks of super
-                intelligent machines that perform tasks such as facial
-                recognition technology, autonomous vehicle driving, and image
-                generation.
-              </p>
-              <p><strong>References:</strong> Dr. Sandra Metzger</p>
-              <iframe
-                width="100%"
-                height="370"
-                src="https://www.youtube.com/embed/YfHtRKtjg78"
-                title="YouTube video player"
-                frameborder="0"
-                allowfullscreen></iframe>
-            </article>
-            <article>
-              <h1>Artifact 4</h1>
-              <p>
-                <strong>Title:</strong> Reflection on AI (Gender Prediction)
-                Model Project
-              </p>
-              <p>
-                <strong>Introduction:</strong> This project explores the
-                application of machine learning in predicting gender based on
-                specific human bodily features. The dataset
-                “gender_classification_v7.csv” is selected from Kaggle; I built
-                a predictive model through preprocessing, exploratory data
-                analysis (EDA), and model evaluation. The project does not only
-                demonstrate the technical process of model building but also
-                considers the ethical implications of predicting gender using
-                physical attributes.
-              </p>
-              <p>
-                <strong>Description:</strong>
-              </p>
-              <p>
-                <strong
-                  >Objectives: Overall, the dataset contains
-                  <strong>5,001 rows</strong> and <strong>8 columns</strong> of
-                  features and labels.
-                </strong>
-              </p>
-              <h3>Feature Variables</h3>
-              <ul>
-                <li>long_hair</li>
-                <li>forehead_width_cm</li>
-                <li>forehead_height_cm</li>
-                <li>nose_wide</li>
-                <li>nose_long</li>
-                <li>lips_thin</li>
-                <li>distance_nose_to_lip_long</li>
-              </ul>
-              <p>
-                The target variable (label) represents gender, categorized into
-                Male (0) and Female (1). I chose a Random Forest Classifier to
-                train and validate the model. The metric used to evaluate this
-                model is accuracy score and a confusion matrix.
-              </p>
-              <h2>Objective</h2>
-              <p>
-                The ultimate goal of this project was to develop a reliable
-                machine learning model to predict gender using human physical
-                features from a dataset.
-              </p>
-              <p>Specific objectives included:</p>
-              <ul>
-                <li>
-                  Conducting preprocessing and exploratory data analysis (EDA).
-                </li>
-                <li>
-                  Training and testing a machine learning model for
-                  classification.
-                </li>
-                <li>Evaluating performance using accuracy scores.</li>
-                <li>
-                  Reflecting on ethical considerations such as fairness and
-                  bias.
-                </li>
-                <li>
-                  Proposing improvements for future model reliability and
-                  inclusiveness.
-                </li>
-              </ul>
-
-              <h2>Process</h2>
-              <h3>Data Preprocessing</h3>
-              <ul>
-                <li>Checked for missing values, none found.</li>
-                <li>Converted all data types into integers.</li>
-                <li>
-                  Encoded gender labels (<code>Male = 0</code>,
-                  <code>Female = 1</code>).
-                </li>
-                <li>Split the dataset into training and test sets.</li>
-              </ul>
-
-              <h3>Exploratory Data Analysis (EDA)</h3>
-              <ul>
-                <li>
-                  Used plots and graphs to visualize feature distributions.
-                </li>
-                <li>Gained insights into patterns within the dataset.</li>
-              </ul>
-
-              <h3>Model Building</h3>
-              <ul>
-                <li>
-                  Selected <strong>Random Forest Classifier</strong> as the
-                  algorithm.
-                </li>
-                <li>Trained the model using training data.</li>
-              </ul>
-
-              <h3>Validation and Evaluation</h3>
-              <ul>
-                <li>Tested predictions on unseen data.</li>
-                <li>Measured performance with <code>accuracy_score</code>.</li>
-              </ul>
-
-              <h2>Tools / Technologies Used</h2>
-              <ul>
-                <li><strong>Python</strong></li>
-                <li>
-                  <strong>Pandas, NumPy</strong> → Data cleaning and
-                  preprocessing
-                </li>
-                <li>
-                  <strong>Matplotlib, Seaborn</strong> → Visualization and EDA
-                </li>
-                <li>
-                  <strong>Scikit-learn</strong> → Machine learning (model
-                  training, testing, evaluation)
-                </li>
-                <li>
-                  <strong>Random Forest Classifier</strong> → Selected model
-                </li>
-              </ul>
-
-              <h2>Ethical Considerations</h2>
-              <p>
-                While developing this model, I ensured adherence to responsible
-                AI practices:
-              </p>
-              <ul>
-                <li>No personal or identifiable data was used.</li>
-                <li>No intentional manipulation of the dataset occurred.</li>
-                <li>
-                  Objective, transparent methods were followed throughout the
-                  analysis.
-                </li>
-                <li>
-                  Acknowledged potential racial bias in the dataset, recognizing
-                  that the lack of diversity can limit fairness and inclusivity.
-                </li>
-              </ul>
-
-              <h2>Reflection and Improvements</h2>
-              <ul>
-                <li>
-                  Duplicate data removal during preprocessing could improve
-                  reliability.
-                </li>
-                <li>
-                  Incorporating a more diverse dataset (across race and gender
-                  identity) would make the model more inclusive and ethically
-                  sound.
-                </li>
-              </ul>
-
-              <h2>Value Proposition</h2>
-              <p>
-                This project highlights the workflow of building a machine
-                learning classification model from start to finish while
-                balancing technical accuracy with ethical responsibility. It
-                demonstrates:
-              </p>
-              <ul>
-                <li>
-                  A practical approach to predictive modeling using physical
-                  features.
-                </li>
-                <li>
-                  The importance of data quality and preprocessing in building
-                  accurate models.
-                </li>
-                <li>Awareness of bias and inclusivity issues in AI systems.</li>
-                <li>
-                  Transferable skills that can be applied to other machine
-                  learning projects and domains.
-                </li>
-              </ul>
-
-              <h3>Code:</h3>
-              <iframe
-                src="files.pdf"
-                width="100%"
-                height="600"
-                title="AI Timeline PDF"></iframe>
-
-              <p>
-                References: Dr. Sandra Metzger <br />
-                I used ChatGPT to rephrase information from my original project
-              </p>
-            </article>
-            <article>
-              <h1>Artifact 5</h1>
-              <p>
-                <strong>Title:</strong> Self-Transformation Reflectional Project
-              </p>
-              <p>
-                <strong>Introduction:</strong> This is a self-reflection project
-                that explores the transformational experiences that influenced
-                my personal and professional development— particularly as a
-                first-generation college student. I consider gaining admission
-                to Ghana’s top universities as a major milestone in my life,
-                which I attribute to God’s blessing and purpose. In this paper,
-                I reflect on the major experiences that contributed to my
-                personal growth and explain how these lessons apply to
-                leadership.
-              </p>
-              <p>
-                <strong>Description:</strong> The transformational process in my
-                life involved significant decisions about my educational and
-                career path. Initially, I aimed to pursue a career as a
-                Certified Public Accountant (CPA).Yet, Over time I realized that
-                my interests aligned closely with the humanities. Hence, I
-                changed my career path—which was a pivotal moment that allowed
-                me to pursue a field I am passionate about. This experience
-                demonstrates that personal transformation often requires
-                reassessment of goals and adaptability.
-              </p>
-              <p><strong>Objectives:</strong></p>
-              <ul>
-                <li>
-                  To examine the transformational processes which led to my
-                  personal and academic successes.
-                </li>
-                <li>
-                  To identify lessons from these experiences that can be applied
-                  to leadership.
-                </li>
-                <li>
-                  To explore the connection between faith, purpose, and change
-                  in guiding personal growth.
-                </li>
-                <li>
-                  To illustrate how adaptability and openness to change are
-                  crucial qualities for effective leadership.
-                </li>
-              </ul>
-
-              <h2>Process / Experience</h2>
-              <ul>
-                <li>
-                  <strong>Initial Goal Setting:</strong> Setting a career goal
-                  in middle school to become a CPA.
-                </li>
-                <li>
-                  Pursuing a business major in high school in alignment with
-                  this goal.
-                </li>
-              </ul>
-
-              <h2>Reevaluation and Transformation</h2>
-              <ul>
-                <li>Realized a lack of genuine interest in a CPA career.</li>
-                <li>
-                  Made a deliberate decision to shift focus to humanities in
-                  college.
-                </li>
-                <li>
-                  Reflected on the decision as aligning with God’s purpose for
-                  my life.
-                </li>
-              </ul>
-
-              <h2>Lessons Learned</h2>
-              <ul>
-                <li>
-                  Change can lead to more fulfilling and purpose-driven
-                  outcomes.
-                </li>
-                <li>
-                  Leaders must be aware of and adapt to inevitable changes.
-                </li>
-                <li>
-                  Faith and reflection can guide decision-making in times of
-                  uncertainty.
-                </li>
-              </ul>
-              <p><strong>Tools/Technologies Used: </strong>ChatGPT, Bible</p>
-              <h2>Value Proposition / Key Takeaways</h2>
-              <ul>
-                <li>
-                  This reflection demonstrates the importance of adaptability in
-                  personal and professional growth.
-                </li>
-                <li>
-                  This reflection highlights the role of faith and purpose in
-                  guiding decisions.
-                </li>
-                <li>
-                  From this reflection, one can understand that effective
-                  leaders must anticipate change and respond without fear or
-                  resistance.
-                </li>
-                <li>
-                  This reflection project encourages reflection on personal
-                  experiences to inform leadership and mentorship of others.
-                </li>
-              </ul>
-              <p>
-                <strong>References:</strong> Dr. Sandra Metzger <br />
-                I used ChatGPT to assist me rewrite my reflections from my
-                assignment.
-              </p>
-            </article>
-          </div>
-        </section>
-      </main>
-    </div>
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Clement Asemani Arhin</p>
+    </footer>
   </body>
 </html>
