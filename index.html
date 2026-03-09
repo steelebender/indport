@@ -29,13 +29,18 @@
       <div class="nav-container">
         <h1 class="logo">Clement Asemani Arhin</h1>
         <nav>
-          <ul>
+          <ul class="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#work">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
           </ul>
+          <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+          </div>
         </nav>
         <div class="social-icons">
           <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -46,7 +51,7 @@
 
     <!-- HERO SECTION -->
     <section class="hero">
-      <h2>Clement Asemani Arhin</h2>
+      <h2>I am a</h2>
       <p class="subtitle">
         Artificial Intelligence Developer • Data Analyst • Full-Stack Developer
       </p>
@@ -124,50 +129,32 @@
       <article class="project">
         <div class="project-text">
           <h3>Artifact 1 — Machine Learning Algorithms Visual Framework</h3>
-
           <p>
             <strong>Introduction:</strong> Machine Learning is an important
-            branch of Artificial Intelligence that allows computers to learn
-            patterns from data and make predictions without being explicitly
-            programmed for every task. This project focuses on understanding
-            several common machine learning algorithms and organizing them into
-            supervised and unsupervised learning categories.
+            branch of Artificial Intelligence...
           </p>
-
           <p>
             <strong>Description:</strong> This artifact is an infographic
-            presenting ten machine learning algorithms, divided into supervised
-            (Decision Tree, Random Forest, SVM, KNN, Neural Networks) and
-            unsupervised (K-Means, DBSCAN, PCA, Apriori, Hierarchical
-            Clustering). Each algorithm includes applications and real-world
-            examples.
+            presenting ten machine learning algorithms...
           </p>
-
           <p>
             <strong>Objective:</strong> Provide a visual framework to help
-            viewers understand algorithm categorization and applications.
+            viewers understand algorithm categorization...
           </p>
-
           <p>
             <strong>Process:</strong> I researched commonly used algorithms,
-            organized them into groups, and designed the infographic for
-            clarity.
+            organized them into groups...
           </p>
-
           <p>
             <strong>Tools:</strong> ChatGPT, Online Research, Infographic Design
             Tools
           </p>
-
           <p>
             <strong>Value Proposition:</strong> Helps students, educators, and
-            professionals understand how algorithms work and when to use them.
+            professionals understand how algorithms work...
           </p>
-
           <p><strong>References:</strong> Dr. Eskinder Belete</p>
         </div>
-
-        <!-- STATIC IMAGE BELOW ALL TEXT -->
         <div class="project-image">
           <img
             src="3ba8fe2e-44eb-4406-a794-a060dc10a31b.png"
@@ -180,5 +167,16 @@
     <footer>
       <p>© 2026 Clement Asemani Arhin</p>
     </footer>
+
+    <!-- JS for Burger Menu -->
+    <script>
+      const burger = document.querySelector(".burger");
+      const nav = document.querySelector(".nav-links");
+
+      burger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        burger.classList.toggle("toggle");
+      });
+    </script>
   </body>
 </html>
