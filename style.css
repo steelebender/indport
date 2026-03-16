@@ -1,4 +1,6 @@
-/* GENERAL STYLES */
+/* =========================
+   GENERAL RESET & STYLES
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -12,10 +14,19 @@ body {
   line-height: 1.6;
 }
 
-/* HEADER / NAVBAR */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================
+   HEADER / NAVBAR
+   ========================= */
 header {
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px 20px;
+  text-align: center;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -27,11 +38,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 16px;
 }
 
 .logo {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   color: #6366f1;
 }
@@ -43,7 +53,6 @@ nav ul {
 }
 
 nav a {
-  text-decoration: none;
   color: #444;
   font-weight: 500;
   transition: 0.3s;
@@ -79,7 +88,9 @@ nav a:hover {
   transition: all 0.3s ease;
 }
 
-/* HERO SECTION */
+/* =========================
+   HERO SECTION
+   ========================= */
 .hero {
   text-align: center;
   padding: 80px 16px 40px;
@@ -91,6 +102,7 @@ nav a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .subtitle {
@@ -106,7 +118,9 @@ nav a:hover {
   color: #555;
 }
 
-/* SECTIONS */
+/* =========================
+   SECTIONS
+   ========================= */
 section {
   max-width: 95%;
   margin: auto;
@@ -121,6 +135,8 @@ section h2 {
 }
 
 section h2::after {
+  content: "";
+  display: block;
   width: 50px;
   height: 3px;
   background: #14b8a6;
@@ -128,7 +144,9 @@ section h2::after {
   border-radius: 2px;
 }
 
-/* CARDS */
+/* =========================
+   CARDS
+   ========================= */
 .cards {
   display: flex;
   flex-direction: column;
@@ -137,18 +155,20 @@ section h2::after {
 
 .card {
   background: #fff;
-  border-radius: 10px;
-  padding: 18px;
-  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
+  border-radius: 12px;
+  padding: 20px 18px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
   transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px rgba(99, 102, 241, 0.15);
 }
 
-/* SKILLS */
+/* =========================
+   SKILLS GRID
+   ========================= */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
@@ -165,43 +185,121 @@ section h2::after {
   font-size: 14px;
 }
 
-/* PROJECTS */
+/* =========================
+   PROJECTS / ARTIFACTS
+   ========================= */
 .project {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 16px;
   padding: 24px;
   margin-top: 30px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: 0.3s;
 }
 
 .project:hover {
-  transform: translateY(-3px);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 }
 
 .project-text {
   line-height: 1.6;
   margin-bottom: 20px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
-/* PROJECT IMAGE */
 .project-image {
-  width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .project-image img {
-  width: 100%;
   max-width: 100%;
   border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   object-fit: contain;
-  display: block;
 }
 
-/* FOOTER */
+/* =========================
+   ARTIFACTS SECTION MODERN STYLE
+   ========================= */
+#artifacts {
+  padding: 60px 20px;
+  background: #f3f4f6;
+}
+
+#artifacts h2 {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6366f1, #14b8a6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Artifacts cards grid */
+#artifacts .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.artifact-card {
+  text-decoration: none;
+  color: inherit;
+}
+
+.artifact-card .card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  height: 100%;
+}
+
+.artifact-card .card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.15);
+}
+
+.artifact-card h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #111;
+  font-weight: 600;
+}
+
+.artifact-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.artifact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(90deg, #6366f1, #14b8a6);
+  transition: all 0.3s;
+}
+
+.artifact-button:hover {
+  background: linear-gradient(90deg, #14b8a6, #6366f1);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
 footer {
   text-align: center;
   padding: 30px 16px;
@@ -211,72 +309,66 @@ footer {
   border-top: 1px solid #eee;
 }
 
-/* RESPONSIVE MEDIA QUERIES */
-@media (min-width: 769px) {
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 768px) {
   .hero h2 {
-    font-size: 42px;
+    font-size: 28px;
   }
 
   .subtitle {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .description {
-    font-size: 16px;
-    max-width: 650px;
+    font-size: 14px;
+  }
+
+  #artifacts h2 {
+    font-size: 32px;
   }
 
   .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
-  .skills-grid span {
-    font-size: 16px;
-    padding: 10px;
+  .artifact-card .card {
+    padding: 20px 16px;
   }
 
-  section {
-    padding: 60px 20px;
+  .artifact-button {
+    padding: 10px 18px;
   }
 }
 
-/* NAV RESPONSIVE MOBILE */
-@media (max-width: 768px) {
-  .nav-links {
-    position: absolute;
-    right: 0;
-    top: 70px;
-    height: calc(100vh - 70px);
-    background: #fff;
-    flex-direction: column;
-    width: 200px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    padding-top: 20px;
-    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+@media (min-width: 769px) {
+  section {
+    padding: 60px 40px;
   }
 
-  .nav-links.active {
-    transform: translateX(0);
+  #artifacts {
+    padding: 80px 60px;
   }
+}
+/* =========================
+   ARTIFACT CARD TEXT IMPROVEMENTS
+   ========================= */
+.artifact-card p,
+.project-text {
+  font-size: 16px; /* Slightly bigger for readability */
+  line-height: 1.8; /* Increased line spacing */
+  margin-bottom: 16px; /* More space between paragraphs */
+}
 
-  .nav-links li {
-    margin: 20px 0;
-    text-align: center;
-  }
+.artifact-card strong {
+  font-weight: 600; /* Emphasize strong text */
+}
 
-  .burger {
-    display: flex;
-  }
+.project-text strong {
+  font-weight: 600;
+}
 
-  .burger.toggle .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  .burger.toggle .line2 {
-    opacity: 0;
-  }
-  .burger.toggle .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
+.artifact-card .card {
+  padding: 28px 24px; /* Extra padding for text breathing space */
 }
