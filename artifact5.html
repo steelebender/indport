@@ -1,0 +1,830 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Artifact 5| Pre-Trained Models Trade-Offs Analysis</title>
+    <link
+      rel="stylesheet"
+      href="style.css" />
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f5f5f5;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      header a {
+        color: rgba(255, 255, 255, 0.9);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      header a:hover {
+        color: white;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      section {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+      }
+
+      .project {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+      }
+
+      .project-text h3 {
+        color: #1e3a5f;
+        font-size: 1.8rem;
+        margin-top: 0;
+      }
+
+      .project-text p {
+        margin-bottom: 1rem;
+        text-align: justify;
+        font-size: 0.95rem;
+      }
+
+      .project-text strong {
+        color: #2563eb;
+      }
+
+      .project-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+        background: #f0f4f8;
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      .project-image img {
+        max-width: 100%;
+        max-height: 500px;
+        border-radius: 6px;
+      }
+
+      .pdf-preview {
+        margin: 2rem 0;
+        padding: 1.5rem;
+        background: #f0f4f8;
+        border-left: 4px solid #2563eb;
+        border-radius: 4px;
+        text-align: center;
+      }
+
+      .pdf-download-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+        color: white;
+        padding: 0.8rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        margin: 0.5rem;
+      }
+
+      .pdf-download-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+      }
+
+      .key-highlights {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .highlight-card {
+        background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ff 100%);
+        padding: 1.5rem;
+        border-radius: 8px;
+        border-left: 4px solid #2563eb;
+      }
+
+      .highlight-card h4 {
+        color: #1e3a5f;
+        margin-top: 0;
+      }
+
+      .highlight-card p {
+        margin-bottom: 0;
+        font-size: 0.9rem;
+      }
+
+      .models-overview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .model-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: box-shadow 0.3s;
+      }
+
+      .model-card:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .model-card h4 {
+        color: #1e3a5f;
+        margin-top: 0;
+        border-bottom: 2px solid #2563eb;
+        padding-bottom: 0.5rem;
+      }
+
+      .model-card .domain {
+        color: #2563eb;
+        font-weight: 600;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+      }
+
+      .model-card p {
+        margin: 0.5rem 0;
+        font-size: 0.9rem;
+      }
+
+      .tradeoff-section {
+        margin: 2rem 0;
+      }
+
+      .tradeoff-card {
+        background: white;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .tradeoff-card h4 {
+        color: #1e3a5f;
+        margin-top: 0;
+      }
+
+      footer {
+        background: #f0f4f8;
+        padding: 2rem;
+        text-align: center;
+        color: #666;
+        margin-top: 4rem;
+      }
+
+      @media (max-width: 768px) {
+        .project {
+          grid-template-columns: 1fr;
+        }
+
+        header h1 {
+          font-size: 1.8rem;
+        }
+
+        .container {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Artifact 6 — Pre-Trained Models Trade-Offs Analysis</h1>
+      <a href="index.html">← Back to Portfolio</a>
+    </header>
+
+    <div class="container">
+      <section id="model-analysis">
+        <article class="project">
+          <div class="project-text">
+            <h3>Pre-Trained Models Trade-Offs Analysis</h3>
+
+            <p>
+              <strong>Introduction:</strong> In the rapidly evolving landscape
+              of machine learning, practitioners face a critical challenge:
+              selecting pre-trained models that balance <em>performance</em>,
+              <em>computational efficiency</em>, and <em>explainability</em>.
+              This comprehensive analysis evaluates four representative
+              pre-trained models across different domains to guide informed
+              model selection decisions.
+            </p>
+
+            <p>
+              <strong>Description:</strong> This artifact is a detailed PDF
+              presentation that compares four pre-trained models spanning
+              natural language processing (GPT-3.5-Turbo, BERT-Base), computer
+              vision (MobileNetV3), and tabular data analysis (XGBoost). The
+              analysis provides a comprehensive decision matrix evaluating
+              models on eight key criteria: model size, accuracy, inference
+              speed, explainability, energy efficiency, ease of integration, and
+              cost-effectiveness.
+            </p>
+
+            <p>
+              <strong>Objective:</strong> The goal is to provide practitioners
+              with a structured framework for selecting pre-trained models based
+              on specific application requirements. Rather than identifying a
+              single "best" model, this analysis demonstrates that optimal model
+              selection is highly context-dependent and must balance competing
+              objectives.
+            </p>
+
+            <p><strong>Process:</strong> The analysis involved:</p>
+            <ul style="margin-left: 1.5rem">
+              <li>
+                Researching technical specifications and performance metrics for
+                each model
+              </li>
+              <li>
+                Gathering data from official documentation, academic papers, and
+                benchmark datasets
+              </li>
+              <li>
+                Developing a structured evaluation framework with quantifiable
+                criteria
+              </li>
+              <li>Creating a decision matrix for cross-model comparison</li>
+              <li>
+                Synthesizing domain-specific recommendations and trade-off
+                analysis
+              </li>
+            </ul>
+
+            <p>
+              <strong>Tools:</strong> ReportLab (Python PDF generation), data
+              analysis frameworks, and academic research synthesis. The document
+              was created programmatically to ensure consistency and
+              reproducibility.
+            </p>
+
+            <p>
+              <strong>Value Proposition:</strong> This comprehensive guide
+              serves as a reference for AI practitioners, data scientists, and
+              decision-makers. It simplifies the complex process of model
+              selection by presenting technical information in an accessible,
+              structured format with clear recommendations for different use
+              cases and deployment scenarios.
+            </p>
+          </div>
+
+          <div class="project-image">
+            <div style="text-align: center; color: #666">
+              <div style="font-size: 4rem; margin-bottom: 1rem">📊</div>
+              <p style="margin: 0"><strong>Comprehensive Analysis</strong></p>
+              <p style="margin: 0.5rem 0; font-size: 0.9rem">
+                9-page PDF presentation with
+              </p>
+              <p style="margin: 0; font-size: 0.9rem">
+                decision matrix and recommendations
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- PDF Preview Section -->
+        <!-- PDF Preview Section -->
+        <div class="pdf-preview">
+          <h3 style="margin-top: 0; color: #1e3a5f">📄 View Full Analysis</h3>
+          <p style="margin-bottom: 1rem; color: #666">
+            Preview the PDF directly below or download it.
+          </p>
+
+          <a
+            href="Model_Trade_offs_Analysis.pdf"
+            class="pdf-download-btn"
+            download>
+            ⬇️ Download PDF
+          </a>
+
+          <!-- Embedded PDF Viewer -->
+          <div class="pdf-viewer">
+            <iframe
+              src="Model_Trade_offs_Analysis.pdf"
+              width="100%"
+              height="600px">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Highlights Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">📌 Key Highlights</h2>
+        <div class="key-highlights">
+          <div class="highlight-card">
+            <h4>4 Models Analyzed</h4>
+            <p>
+              GPT-3.5-Turbo, BERT-Base, MobileNetV3, and XGBoost across NLP,
+              Vision, and Tabular domains.
+            </p>
+          </div>
+          <div class="highlight-card">
+            <h4>8 Evaluation Criteria</h4>
+            <p>
+              Size, accuracy, speed, explainability, energy efficiency,
+              integration, and cost—all comprehensively rated.
+            </p>
+          </div>
+          <div class="highlight-card">
+            <h4>Decision Framework</h4>
+            <p>
+              A 6-step structured approach to guide model selection based on
+              specific requirements.
+            </p>
+          </div>
+          <div class="highlight-card">
+            <h4>3 Critical Trade-Offs</h4>
+            <p>
+              Accuracy vs. Efficiency, Explainability vs. Performance, and Cost
+              vs. Control.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Models Overview Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">🤖 Models Analyzed</h2>
+        <div class="models-overview">
+          <div class="model-card">
+            <h4>GPT-3.5-Turbo</h4>
+            <p class="domain">NLP / Generative AI</p>
+            <p><strong>Size:</strong> 175B parameters</p>
+            <p><strong>Accuracy:</strong> MMLU: 86.5%, BLEU: 45-50</p>
+            <p><strong>Speed:</strong> 100-200ms latency</p>
+            <p><strong>Explainability:</strong> Low (black box)</p>
+            <p style="color: #059669; font-size: 0.85rem">
+              ✓ Best for: Premium NLP applications, few-shot learning
+            </p>
+          </div>
+
+          <div class="model-card">
+            <h4>BERT-Base</h4>
+            <p class="domain">NLP / Understanding</p>
+            <p><strong>Size:</strong> 110M parameters</p>
+            <p><strong>Accuracy:</strong> GLUE: 78.3%, SQuAD: 88.5%</p>
+            <p><strong>Speed:</strong> 10-50ms latency</p>
+            <p>
+              <strong>Explainability:</strong> Medium (attention visualization)
+            </p>
+            <p style="color: #059669; font-size: 0.85rem">
+              ✓ Best for: Cost-sensitive, on-premises deployment
+            </p>
+          </div>
+
+          <div class="model-card">
+            <h4>MobileNetV3</h4>
+            <p class="domain">Computer Vision</p>
+            <p><strong>Size:</strong> 8.2M parameters</p>
+            <p><strong>Accuracy:</strong> ImageNet top-1: 75.2%</p>
+            <p><strong>Speed:</strong> 5-15ms (mobile GPU)</p>
+            <p><strong>Explainability:</strong> Low-Medium</p>
+            <p style="color: #059669; font-size: 0.85rem">
+              ✓ Best for: Mobile/edge applications
+            </p>
+          </div>
+
+          <div class="model-card">
+            <h4>XGBoost</h4>
+            <p class="domain">Tabular Data / Classification</p>
+            <p><strong>Size:</strong> 100K-10M parameters</p>
+            <p><strong>Accuracy:</strong> AUC: 0.92-0.96</p>
+            <p><strong>Speed:</strong> &lt;1ms latency</p>
+            <p><strong>Explainability:</strong> High (SHAP compatible)</p>
+            <p style="color: #059669; font-size: 0.85rem">
+              ✓ Best for: Regulated industries, tabular data
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Trade-Offs Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">⚖️ Critical Trade-Offs</h2>
+
+        <div class="tradeoff-section">
+          <div class="tradeoff-card">
+            <h4>1. Accuracy vs. Efficiency</h4>
+            <p>
+              Larger models deliver higher accuracy but require more
+              computation. MobileNetV3 sacrifices ~3% accuracy to achieve 100x
+              faster inference. Choose based on deployment constraints:
+              <strong>medical diagnosis</strong> → favor accuracy;
+              <strong>mobile apps</strong> → favor speed.
+            </p>
+          </div>
+
+          <div class="tradeoff-card">
+            <h4>2. Explainability vs. Performance</h4>
+            <p>
+              High-performance black-box models lack interpretability. XGBoost
+              trades ~2% accuracy for full explainability.
+              <strong>Regulated sectors</strong> (healthcare, finance)
+              prioritize explainability; <strong>research</strong> often
+              prioritizes performance.
+            </p>
+          </div>
+
+          <div class="tradeoff-card">
+            <h4>3. Cost vs. Control</h4>
+            <p>
+              API-based models offer convenience but incur ongoing costs and
+              limit customization. Open-source models require infrastructure but
+              provide full control. <strong>Budget-constrained</strong> teams →
+              open-source; <strong>premium applications</strong> → APIs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Recommendations Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">
+          ✅ Domain-Specific Recommendations
+        </h2>
+
+        <div class="tradeoff-card">
+          <h4>NLP / Generative AI</h4>
+          <p>
+            <strong>GPT-3.5-Turbo</strong> excels in few-shot learning and broad
+            capability but costs $0.0015/1K tokens.
+            <strong>BERT-Base</strong> provides balanced NLP with better
+            interpretability and zero inference cost.
+            <strong>Recommendation:</strong> Use GPT-3.5-Turbo for production
+            premium applications; use BERT for cost-sensitive and regulated
+            environments.
+          </p>
+        </div>
+
+        <div class="tradeoff-card">
+          <h4>Computer Vision</h4>
+          <p>
+            <strong>MobileNetV3</strong> dominates mobile/edge deployments with
+            exceptional efficiency. <strong>Recommendation:</strong> Deploy
+            MobileNetV3 for mobile and IoT applications. For server-side
+            high-accuracy needs, consider EfficientNet or ResNet variants.
+          </p>
+        </div>
+
+        <div class="tradeoff-card">
+          <h4>Tabular Data</h4>
+          <p>
+            <strong>XGBoost</strong> offers the best balance of accuracy,
+            interpretability, and speed for tabular data.
+            <strong>Recommendation:</strong> Use XGBoost as the default choice
+            for tabular data, especially in regulated industries requiring
+            explainability and fast inference.
+          </p>
+        </div>
+      </section>
+
+      <!-- Decision Framework Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">🎯 Decision Framework</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 2rem">
+          A 6-step structured approach to guide your model selection process:
+        </p>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+          ">
+          <div
+            style="
+              background: #f0f4f8;
+              padding: 1.5rem;
+              border-radius: 8px;
+              text-align: center;
+            ">
+            <div
+              style="
+                font-size: 1.5rem;
+                color: #2563eb;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              ">
+              1
+            </div>
+            <h4 style="margin: 0.5rem 0; color: #1e3a5f">
+              Define Requirements
+            </h4>
+            <p style="font-size: 0.9rem; margin: 0">
+              Accuracy targets, latency, budget, explainability needs
+            </p>
+          </div>
+
+          <div
+            style="
+              background: #f0f4f8;
+              padding: 1.5rem;
+              border-radius: 8px;
+              text-align: center;
+            ">
+            <div
+              style="
+                font-size: 1.5rem;
+                color: #2563eb;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              ">
+              2
+            </div>
+            <h4 style="margin: 0.5rem 0; color: #1e3a5f">Identify Domain</h4>
+            <p style="font-size: 0.9rem; margin: 0">
+              NLP, Vision, Tabular, or Multimodal
+            </p>
+          </div>
+
+          <div
+            style="
+              background: #f0f4f8;
+              padding: 1.5rem;
+              border-radius: 8px;
+              text-align: center;
+            ">
+            <div
+              style="
+                font-size: 1.5rem;
+                color: #2563eb;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              ">
+              3
+            </div>
+            <h4 style="margin: 0.5rem 0; color: #1e3a5f">Assess Deployment</h4>
+            <p style="font-size: 0.9rem; margin: 0">
+              Cloud, on-premises, or edge
+            </p>
+          </div>
+
+          <div
+            style="
+              background: #f0f4f8;
+              padding: 1.5rem;
+              border-radius: 8px;
+              text-align: center;
+            ">
+            <div
+              style="
+                font-size: 1.5rem;
+                color: #2563eb;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              ">
+              4
+            </div>
+            <h4 style="margin: 0.5rem 0; color: #1e3a5f">
+              Evaluate Trade-Offs
+            </h4>
+            <p style="font-size: 0.9rem; margin: 0">
+              Accuracy, explainability, and cost priorities
+            </p>
+          </div>
+
+          <div
+            style="
+              background: #f0f4f8;
+              padding: 1.5rem;
+              border-radius: 8px;
+              text-align: center;
+            ">
+            <div
+              style="
+                font-size: 1.5rem;
+                color: #2563eb;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              ">
+              5
+            </div>
+            <h4 style="margin: 0.5rem 0; color: #1e3a5f">
+              Prototype & Benchmark
+            </h4>
+            <p style="font-size: 0.9rem; margin: 0">
+              Test 2-3 candidates with your data
+            </p>
+          </div>
+
+          <div
+            style="
+              background: #f0f4f8;
+              padding: 1.5rem;
+              border-radius: 8px;
+              text-align: center;
+            ">
+            <div
+              style="
+                font-size: 1.5rem;
+                color: #2563eb;
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+              ">
+              6
+            </div>
+            <h4 style="margin: 0.5rem 0; color: #1e3a5f">Monitor & Iterate</h4>
+            <p style="font-size: 0.9rem; margin: 0">
+              Track real-world performance, adjust as needed
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reflection Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">🔍 Reflection</h2>
+
+        <p>
+          Developing this comprehensive analysis deepened my understanding of
+          the multidimensional nature of model selection in machine learning.
+          Rather than a simple "best model" paradigm, I learned that optimal
+          model selection requires balancing multiple competing objectives and
+          aligning technical decisions with real-world constraints.
+        </p>
+
+        <p>
+          The process of researching four distinct models across different
+          domains revealed important insights:
+        </p>
+
+        <ul style="margin-left: 1.5rem">
+          <li>
+            <strong>Domain Matters:</strong> Models optimized for one domain
+            often perform poorly in others. There are no universal solutions.
+          </li>
+          <li>
+            <strong>Trade-Offs Are Real:</strong> Improving one dimension (e.g.,
+            accuracy) often degrades another (e.g., inference speed or
+            interpretability).
+          </li>
+          <li>
+            <strong>Context is King:</strong> A model's "correctness" depends
+            entirely on the specific application, deployment environment, and
+            regulatory requirements.
+          </li>
+          <li>
+            <strong>Communication Matters:</strong> Presenting technical
+            information in a structured, visual format makes complex concepts
+            accessible to diverse audiences.
+          </li>
+        </ul>
+
+        <p>
+          This project strengthened my ability to synthesize technical research,
+          identify patterns across disparate domains, and communicate complex
+          trade-offs in a clear and actionable way. It demonstrates how
+          systematic analysis can transform overwhelming amounts of information
+          into practical decision-making frameworks.
+        </p>
+      </section>
+
+      <!-- Documentation Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">
+          📋 Explanatory Documentation
+        </h2>
+
+        <p>
+          This analysis demonstrates that model selection is not a simple
+          optimization problem but rather a multi-objective decision under
+          constraint. The PDF presentation is structured to guide practitioners
+          through the decision process systematically:
+        </p>
+
+        <p>
+          <strong>Methodology Section:</strong> Establishes credibility by
+          documenting data sources (official documentation, academic papers,
+          benchmark datasets) and evaluation criteria. This transparency allows
+          readers to understand the basis for all comparisons.
+        </p>
+
+        <p>
+          <strong>Decision Matrix:</strong> Transforms qualitative and
+          quantitative data into a standardized 5-point rating scale across 8
+          criteria. This visual representation makes cross-model comparison
+          immediate and transparent. Color coding and clear labeling enhance
+          usability.
+        </p>
+
+        <p>
+          <strong>Domain-Specific Analysis:</strong> Recognizes that NLP,
+          vision, and tabular data have fundamentally different characteristics.
+          Recommendations are tailored to each domain's unique constraints and
+          opportunities.
+        </p>
+
+        <p>
+          <strong>Trade-Off Synthesis:</strong> Explicitly names and explains
+          the three dominant trade-off patterns. Rather than hiding complexity,
+          this section helps practitioners understand the underlying tensions
+          they'll encounter during implementation.
+        </p>
+
+        <p>
+          <strong>Decision Framework:</strong> Provides a repeatable 6-step
+          process that practitioners can apply to their own model selection
+          problems. This framework encourages systematic thinking rather than
+          ad-hoc decision-making.
+        </p>
+
+        <p>
+          The overall narrative flow—from introduction through methodology to
+          specific recommendations and decision frameworks—supports multiple use
+          cases: learning (understand key concepts), reference (look up specific
+          model metrics), and decision-making (apply the framework to your
+          problem).
+        </p>
+      </section>
+
+      <!-- References Section -->
+      <section>
+        <h2 style="color: #1e3a5f; margin-top: 0">
+          📚 References & Data Sources
+        </h2>
+
+        <p><strong>Official Documentation:</strong></p>
+        <ul style="margin-left: 1.5rem">
+          <li>OpenAI GPT-3 & GPT-4 API Documentation</li>
+          <li>Google BERT Model Zoo & Documentation</li>
+          <li>TensorFlow MobileNet Documentation</li>
+          <li>XGBoost Official Documentation</li>
+        </ul>
+
+        <p><strong>Academic Papers:</strong></p>
+        <ul style="margin-left: 1.5rem">
+          <li>Vaswani et al. (2017) - "Attention Is All You Need"</li>
+          <li>
+            Devlin et al. (2018) - "BERT: Pre-training of Deep Bidirectional
+            Transformers"
+          </li>
+          <li>
+            Howard & Ruder (2018) - "Universal Language Model Fine-tuning for
+            Text Classification"
+          </li>
+          <li>
+            Chen & Guestrin (2016) - "XGBoost: A Scalable Tree Boosting System"
+          </li>
+        </ul>
+
+        <p><strong>Benchmark Datasets:</strong></p>
+        <ul style="margin-left: 1.5rem">
+          <li>GLUE & SuperGLUE (NLP benchmarks)</li>
+          <li>ImageNet (Computer Vision)</li>
+          <li>UCI Machine Learning Repository (Tabular data)</li>
+        </ul>
+
+        <p><strong>Tools Used:</strong></p>
+        <ul style="margin-left: 1.5rem">
+          <li>ReportLab (Python PDF generation)</li>
+          <li>Python 3.12+</li>
+          <li>Data synthesis and analysis</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      <p>© 2026 Clement Asemani Arhin</p>
+    </footer>
+  </body>
+</html>
