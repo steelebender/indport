@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Artifact 3 | How Generative AI Models Are Trained</title>
+
+    <style>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      header {
+        background: linear-gradient(135deg, #1e3a5f, #2563eb);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: auto;
+        padding: 2rem;
+      }
+
+      section {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      h2 {
+        color: #1e3a5f;
+      }
+
+      /* NEW IMAGE STYLE */
+      .hero-image {
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .pipeline {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .step {
+        flex: 1;
+        min-width: 150px;
+        background: #eef2ff;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .resources {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+      }
+
+      .card {
+        background: #f0f4f8;
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+
+      .model-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+
+      .model {
+        border: 1px solid #e5e7eb;
+        padding: 1.5rem;
+        border-radius: 8px;
+      }
+
+      .highlight {
+        background: #eef2ff;
+        padding: 1rem;
+        border-left: 4px solid #2563eb;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Artifact 3 — Training Generative AI Models</h1>
+      <p>Resources, Cost, and Real-World Examples</p>
+      <a href="index.html">← Back to Portfolio</a>
+    </header>
+
+    <div class="container">
+      <!-- INFOGRAPHIC IMAGE -->
+      <div class="hero-image">
+        <img
+          src="ChatGPT Image Apr 7, 2026 at 09_01_44 PM.png"
+          alt="How Generative AI Models Are Trained Infographic" />
+
+        Image generated with ChatGPT
+      </div>
+
+      <section>
+        <h2>Training Pipeline</h2>
+        <div class="pipeline">
+          <div class="step">
+            <b>1. Data Collection</b><br />Web, books, code, research
+          </div>
+          <div class="step">
+            <b>2. Processing</b><br />Cleaning & tokenization
+          </div>
+          <div class="step"><b>3. Training</b><br />Massive GPU clusters</div>
+          <div class="step"><b>4. Alignment</b><br />Testing & RLHF</div>
+          <div class="step"><b>5. Deployment</b><br />Cloud APIs & apps</div>
+          <div class="step"><b>6. Monitoring</b><br />Continuous updates</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Key Resources Required</h2>
+        <div class="resources">
+          <div class="card">
+            <h3>📚 Data</h3>
+            Trillions of tokens across languages, code and science.
+          </div>
+          <div class="card">
+            <h3>💻 Compute</h3>
+            Thousands of GPUs/TPUs in distributed clusters.
+          </div>
+          <div class="card">
+            <h3>⚡ Energy</h3>
+            Megawatt-scale electricity and cooling systems.
+          </div>
+          <div class="card">
+            <h3>⏳ Time</h3>
+            Months of training and years of research.
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Training Cost Distribution</h2>
+        <ul>
+          <li><b>Compute Infrastructure:</b> 50–70%</li>
+          <li><b>Data Processing:</b> 15–25%</li>
+          <li><b>Engineering:</b> 10–20%</li>
+          <li><b>Energy:</b> 5–10%</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Real Model Examples</h2>
+        <div class="model-grid">
+          <div class="model">
+            <h3>GPT-4</h3>
+            <p>Estimated cost: <b>$100M+</b></p>
+            <p>Trillions of tokens, tens of thousands of GPUs.</p>
+            <div class="highlight">
+              Large scale enables major capability jumps.
+            </div>
+          </div>
+
+          <div class="model">
+            <h3>Claude</h3>
+            <p>Focus on safety and alignment.</p>
+            <p>Uses Constitutional AI and RLAIF.</p>
+            <div class="highlight">Designed for safer AI behavior.</div>
+          </div>
+
+          <div class="model">
+            <h3>LLaMA</h3>
+            <p>Open research model from Meta.</p>
+            <p>Optimized for efficiency and accessibility.</p>
+            <div class="highlight">Democratizes AI development.</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Environmental Impact</h2>
+        <p>
+          Large training runs consume millions of kWh of electricity. Growing
+          focus on efficient models and renewable-powered data centers.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why This Matters</h2>
+        <ul>
+          <li>Bigger models → higher accuracy</li>
+          <li>More compute → higher cost</li>
+          <li>More data → better generalization</li>
+          <li>Efficiency → sustainable AI future</li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
